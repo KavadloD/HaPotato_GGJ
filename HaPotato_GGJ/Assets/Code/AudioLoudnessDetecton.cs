@@ -48,7 +48,7 @@ public class AudioLoudnessDetecton : MonoBehaviour
         }
 
         //current way finds the mean of the audio  it compares the total loudness with the length of the sample
-        Debug.Log("Total Loudness Detected "+ totalLoudness/sampleWindow);
+        //Debug.Log("Total Loudness Detected "+ totalLoudness/sampleWindow);
         return totalLoudness / sampleWindow; 
     }
     

@@ -43,6 +43,7 @@
   <ItemGroup>
      <Compile Include="Assets\Code\AudioLoudnessDetecton.cs" />
      <Compile Include="Assets\Code\ScaleFromMic.cs" />
+     <Compile Include="Assets\Code\WordDetector.cs" />
      <Folder Include="Assets" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.0\Lib\Editor\PlasticSCM\localization\mergetool.ja.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.0\Lib\Editor\PlasticSCM\localization\images.zh-Hans.txt" />
