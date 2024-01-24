@@ -20,6 +20,7 @@ public class WordDetector : MonoBehaviour
       _actions.Add("stop",Stop);
       _actions.Add("go", Go);
       _actions.Add("green", Green);
+      _actions.Add("yellow", Yellow);
       _actions.Add("bad", Bad);
       _actions.Add("dog", Dog);
       _actions.Add("kill", Kill);
@@ -46,8 +47,13 @@ public class WordDetector : MonoBehaviour
       {
          
       }
-      
-      private void Bad()
+
+    private void Yellow()
+    {
+
+    }
+
+    private void Bad()
       {
          
       }
