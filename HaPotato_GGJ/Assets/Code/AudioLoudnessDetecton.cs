@@ -19,7 +19,6 @@ public class AudioLoudnessDetecton : MonoBehaviour
     {
         string microphoneName = Microphone.devices[0];
         microphoneClip = Microphone.Start(microphoneName, true, 20, AudioSettings.outputSampleRate);
-
     }
 
     public float GetLoudnessFromMicrophone()

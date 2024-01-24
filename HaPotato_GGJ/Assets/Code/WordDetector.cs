@@ -66,6 +66,7 @@ public class WordDetector : MonoBehaviour
          
       }
 
+
       private void Open()
       {
          menuOpening = true;
