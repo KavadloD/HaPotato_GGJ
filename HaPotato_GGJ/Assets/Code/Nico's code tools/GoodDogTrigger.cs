@@ -1,12 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.UI;
 
 public class GoodDogTrigger : MonoBehaviour
 {
     public int amount; // This could be any variable that changes over time
-    public WordDetector _wordDetector;
+    private WordDetector _wordDetector;
     private bool wordTriggered;
     private float targetTime;
     private bool played;
@@ -15,21 +15,36 @@ public class GoodDogTrigger : MonoBehaviour
     private GameObject winSprite;
     private GameObject loseSprite;
 
+    private GameObject audioLayer;
+        
     public AudioSource _audioSource;
     public AudioClip Crowd_Cheer;
     public AudioClip Crowd_Dissapoint;
-
+    
     void Awake()
     {
+        audioLayer = GameObject.FindGameObjectWithTag("GameController");
+        
+        _wordDetector = audioLayer.GetComponent<WordDetector>();
         _audioSource = GetComponent<AudioSource>();
         wordTriggered = false;
         targetTime = 5;
         amount = 2; 
+        
+        
+        
         neutralSprite = this.transform.GetChild(0).gameObject; 
         winSprite = this.transform.GetChild(1).gameObject;
         loseSprite = this.transform.GetChild(2).gameObject;
-        played = false;
+        played = false; 
     }
+
+    private void Start()
+    {
+        AudioLoudnessDetecton[] audioLoudness = FindObjectsOfType<AudioLoudnessDetecton>();
+       
+    }
+
     void FixedUpdate()
     {
         if (_wordDetector.GDogTrigger == true)

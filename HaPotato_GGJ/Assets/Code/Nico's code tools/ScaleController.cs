@@ -51,7 +51,7 @@ public class ScaleController : MonoBehaviour
             objectToScaleDown.transform.localScale.z > 0.01f)
         {
             objectToScaleDown.transform.localScale -= Vector3.one * scaleDownSpeed * Time.deltaTime;
-            print("scaling Down started :"+objectToScaleDown.transform.localScale );
+          //  print("scaling Down started :"+objectToScaleDown.transform.localScale );
 
              if (objectToScaleDown.transform.localScale.x < 0.01f)
         objectToScaleDown.transform.localScale = new Vector3(0, objectToScaleDown.transform.localScale.y, objectToScaleDown.transform.localScale.z);

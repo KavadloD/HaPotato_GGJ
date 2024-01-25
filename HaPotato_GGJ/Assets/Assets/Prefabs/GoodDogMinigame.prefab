@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7109919817794626306}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.26770505, y: -4.445892, z: -0.020103898}
+  m_LocalPosition: {x: 0, y: -5.24, z: 0}
   m_LocalScale: {x: 30.801146, y: 4.665746, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -109,8 +109,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7109919818115579218}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.22770505, y: -1.0358919, z: -0.020103898}
-  m_LocalScale: {x: 29.994743, y: 11.630059, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 29.994743, y: 13.932811, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7109919819354042293}
@@ -450,8 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f29b3968a89184195502eae62f52f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 0
-  _wordDetector: {fileID: 0}
+  amount: 2
   _audioSource: {fileID: 0}
   Crowd_Cheer: {fileID: 8300000, guid: d8e3ccba1419a8148b94b3c586e7241d, type: 3}
   Crowd_Dissapoint: {fileID: 8300000, guid: 9105c9510f658e34e95cf93123c719e3, type: 3}

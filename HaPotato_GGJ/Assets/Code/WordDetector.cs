@@ -13,7 +13,9 @@ public class WordDetector : MonoBehaviour
    public bool menuOpening = false;
    public bool BDogTrigger = false;
    public bool GDogTrigger = false;
-    public bool CakeTrigger = false;
+   public bool CakeTrigger = false;
+   public bool miniGameTrigger = false;
+   
    private void Start()
    {
       _actions.Add("return", Return);
@@ -34,6 +36,10 @@ public class WordDetector : MonoBehaviour
       _actions.Add("good dog", GoodDog);
       _actions.Add("good puppy", GoodDog);
       
+      _actions.Add("start game",GameStart);
+      _actions.Add("play",GameStart);
+      
+      
       _actions.Add("kill", Kill);
       _actions.Add("cake",CakeFunc);
       _keywordRecognizer = new KeywordRecognizer(_actions.Keys.ToArray());
@@ -47,12 +53,25 @@ public class WordDetector : MonoBehaviour
       _actions[speech.text].Invoke();
    }
 
+   #region Minigame Start
+
+   private void GameStart()
+   {
+      miniGameTrigger = true;
+      Debug.Log("Good Dog Triggered");
+   }
+
+   #endregion
+   
 
    #region CommandWords
 
    private void Stop()
       {
-         
+         if (miniGameTrigger == true)
+         {
+            
+         }
       }
       
     private void Green() 
@@ -97,13 +116,21 @@ public class WordDetector : MonoBehaviour
    #region DogStuff
       private void BadDog()
       {
-         BDogTrigger = true;
-         Debug.Log("Bad Dog Triggered");
+         if (miniGameTrigger == true)
+         {
+
+            BDogTrigger = true;
+            Debug.Log("Bad Dog Triggered");
+         }
       }
       private void GoodDog()
       {
-         GDogTrigger = true;
-         Debug.Log("Good Dog Triggered");
+         if (miniGameTrigger == true)
+         {
+
+            GDogTrigger = true;
+            Debug.Log("Good Dog Triggered");
+         }
       }
 
    #endregion
