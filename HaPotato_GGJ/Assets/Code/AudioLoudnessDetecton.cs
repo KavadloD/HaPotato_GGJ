@@ -8,7 +8,9 @@ public class AudioLoudnessDetecton : MonoBehaviour
 
     public int sampleWindow = 64;
     private AudioClip microphoneClip;
-
+    public float AudioThresh;
+    public bool CakeTriggerer;
+    public float volume;
 
     private void Start()
     {
@@ -47,8 +49,10 @@ public class AudioLoudnessDetecton : MonoBehaviour
         }
 
         //current way finds the mean of the audio  it compares the total loudness with the length of the sample
-        //Debug.Log("Total Loudness Detected "+ totalLoudness/sampleWindow);
-        return totalLoudness / sampleWindow; 
+        Debug.Log("Total Loudness Detected "+ totalLoudness/sampleWindow);
+        volume=  totalLoudness / sampleWindow;
+        return volume; 
+
     }
     
 }

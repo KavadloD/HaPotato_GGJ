@@ -13,6 +13,7 @@ public class WordDetector : MonoBehaviour
    public bool menuOpening = false;
    public bool BDogTrigger = false;
    public bool GDogTrigger = false;
+    public bool CakeTrigger = false;
    private void Start()
    {
       _actions.Add("return", Return);
@@ -34,7 +35,7 @@ public class WordDetector : MonoBehaviour
       _actions.Add("good puppy", GoodDog);
       
       _actions.Add("kill", Kill);
-
+      _actions.Add("cake",CakeFunc);
       _keywordRecognizer = new KeywordRecognizer(_actions.Keys.ToArray());
       _keywordRecognizer.OnPhraseRecognized += RecoginzedWords;
       _keywordRecognizer.Start();
@@ -106,5 +107,11 @@ public class WordDetector : MonoBehaviour
       }
 
    #endregion
-
+  #region CAKE
+   private void CakeFunc()
+      {
+        CakeTrigger = true;
+         Debug.Log("Cake Triggered");
+      }
+  #endregion
 }
