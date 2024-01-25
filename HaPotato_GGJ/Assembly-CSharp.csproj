@@ -69,6 +69,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
+     <Compile Include="Assets\Code\Adam&apos;s Code\Animation_Test.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
      <Compile Include="Assets\Code\Nico&apos;s code tools\Cake.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
@@ -96,6 +97,7 @@
      <Folder Include="Assets\TextMesh Pro\Sprites" />
      <Folder Include="Assets\Assets\Audio\Music" />
      <Folder Include="Assets\TextMesh Pro\Resources\Sprite Assets" />
+     <Folder Include="Assets\Code\Adam&apos;s Code" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
      <Folder Include="Assets\Assets\Images\Final Sprites" />
      <Folder Include="Assets\Code\Nico&apos;s code tools" />
@@ -113,6 +115,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <Folder Include="Assets\TextMesh Pro" />
      <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts" />
+     <Folder Include="Assets\Assets\Images\Dino_Roar\Cat_Test" />
      <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Resources" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
@@ -136,6 +139,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+     <Folder Include="Assets\Assets\Images\Dino_Roar" />
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
      <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Textures" />
      <Folder Include="Assets\TextMesh Pro\Documentation" />
@@ -785,8 +789,8 @@
      <Reference Include="Unity.2D.Tilemap.Extras">
      <HintPath>C:\Users\DKisg\OneDrive\Documents\GitHub\HaPotato_GGJ\HaPotato_GGJ\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.2D.Animation.Editor">
-     <HintPath>C:\Users\DKisg\OneDrive\Documents\GitHub\HaPotato_GGJ\HaPotato_GGJ\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
+     <Reference Include="Unity.Recorder.Editor">
+     <HintPath>C:\Users\DKisg\OneDrive\Documents\GitHub\HaPotato_GGJ\HaPotato_GGJ\Library\ScriptAssemblies\Unity.Recorder.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.InternalAPIEngineBridge.001">
      <HintPath>C:\Users\DKisg\OneDrive\Documents\GitHub\HaPotato_GGJ\HaPotato_GGJ\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
@@ -796,6 +800,12 @@
      </Reference>
      <Reference Include="Unity.2D.PixelPerfect">
      <HintPath>C:\Users\DKisg\OneDrive\Documents\GitHub\HaPotato_GGJ\HaPotato_GGJ\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Recorder.Base">
+     <HintPath>C:\Users\DKisg\OneDrive\Documents\GitHub\HaPotato_GGJ\HaPotato_GGJ\Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.Animation.Editor">
+     <HintPath>C:\Users\DKisg\OneDrive\Documents\GitHub\HaPotato_GGJ\HaPotato_GGJ\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.2D.Tilemap.Editor">
      <HintPath>C:\Users\DKisg\OneDrive\Documents\GitHub\HaPotato_GGJ\HaPotato_GGJ\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
@@ -869,8 +879,14 @@
      <Reference Include="Unity.2D.IK.Runtime">
      <HintPath>C:\Users\DKisg\OneDrive\Documents\GitHub\HaPotato_GGJ\HaPotato_GGJ\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Sequences.Editor">
+     <HintPath>C:\Users\DKisg\OneDrive\Documents\GitHub\HaPotato_GGJ\HaPotato_GGJ\Library\ScriptAssemblies\Unity.Sequences.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Burst">
      <HintPath>C:\Users\DKisg\OneDrive\Documents\GitHub\HaPotato_GGJ\HaPotato_GGJ\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Sequences">
+     <HintPath>C:\Users\DKisg\OneDrive\Documents\GitHub\HaPotato_GGJ\HaPotato_GGJ\Library\ScriptAssemblies\Unity.Sequences.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Shared.Editor">
      <HintPath>C:\Users\DKisg\OneDrive\Documents\GitHub\HaPotato_GGJ\HaPotato_GGJ\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
@@ -901,6 +917,9 @@
      </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>C:\Users\DKisg\OneDrive\Documents\GitHub\HaPotato_GGJ\HaPotato_GGJ\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Recorder">
+     <HintPath>C:\Users\DKisg\OneDrive\Documents\GitHub\HaPotato_GGJ\HaPotato_GGJ\Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
