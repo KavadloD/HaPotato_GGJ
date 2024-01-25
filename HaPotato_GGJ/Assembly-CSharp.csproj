@@ -83,12 +83,19 @@
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexZoom.cs" />
      <Compile Include="Assets/Code/Nico&apos;s code tools/ScrollUI.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark01.cs" />
+     <Compile Include="Assets/Code/Nico&apos;s code tools/BadDogTriggers.cs" />
+     <Compile Include="Assets/Code/DetectYellow.cs" />
+     <Compile Include="Assets/Code/Nico&apos;s code tools/GoodDogTrigger.cs" />
+     <Compile Include="Assets/Code/Nico&apos;s code tools/GoodDogHead.cs" />
+     <Compile Include="Assets/Code/Nico&apos;s code tools/BadDogHead.cs" />
+     <Compile Include="Assets/Code/Adam&apos;s Code/Animation_Test.cs" />
      <Folder Include="Assets" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <Folder Include="Assets/TextMesh Pro/Examples &amp; Extras/Sprites" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <Folder Include="Assets/TextMesh Pro/Sprites" />
      <Folder Include="Assets/TextMesh Pro/Resources/Sprite Assets" />
+     <Folder Include="Assets/Code/Adam&apos;s Code" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
      <Folder Include="Assets/Code/Nico&apos;s code tools" />
      <None Include="Assets/TextMesh Pro/Examples &amp; Extras/Fonts/Oswald-Bold - OFL.txt" />
@@ -96,11 +103,14 @@
      <None Include="Assets/TextMesh Pro/Examples &amp; Extras/Fonts/Anton OFL.txt" />
      <Folder Include="Assets/TextMesh Pro/Resources/Fonts &amp; Materials" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" />
+     <None Include="Assets/Assets/Fonts/info.txt" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" />
      <Folder Include="Assets/TextMesh Pro/Resources" />
+     <Folder Include="Assets/Assets/Fonts" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" />
      <Folder Include="Assets/TextMesh Pro" />
      <Folder Include="Assets/TextMesh Pro/Examples &amp; Extras/Fonts" />
+     <Folder Include="Assets/Assets/Images/Dino_Roar/Cat_Test" />
      <Folder Include="Assets/TextMesh Pro/Examples &amp; Extras/Resources" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" />
      <None Include="Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt" />
@@ -114,6 +124,7 @@
      <Folder Include="Assets/Assets" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
      <Folder Include="Assets/TextMesh Pro/Shaders" />
+     <Folder Include="Assets/Assets/Prefabs" />
      <Folder Include="Assets/TextMesh Pro/Examples &amp; Extras/Resources/Sprite Assets" />
      <Folder Include="Assets/TextMesh Pro/Resources/Style Sheets" />
      <Folder Include="Assets/TextMesh Pro/Fonts" />
@@ -123,6 +134,7 @@
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" />
+     <Folder Include="Assets/Assets/Images/Dino_Roar" />
      <None Include="Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt" />
      <Folder Include="Assets/TextMesh Pro/Examples &amp; Extras/Textures" />
      <Folder Include="Assets/TextMesh Pro/Documentation" />
@@ -887,6 +899,21 @@
      </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>/Users/aferry1/Desktop/Game Design Capstone/GitHub/HaPotato_GGJ/HaPotato_GGJ/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Sequences.Editor">
+     <HintPath>/Users/aferry1/Desktop/Game Design Capstone/GitHub/HaPotato_GGJ/HaPotato_GGJ/Library/ScriptAssemblies/Unity.Sequences.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Recorder">
+     <HintPath>/Users/aferry1/Desktop/Game Design Capstone/GitHub/HaPotato_GGJ/HaPotato_GGJ/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Recorder.Editor">
+     <HintPath>/Users/aferry1/Desktop/Game Design Capstone/GitHub/HaPotato_GGJ/HaPotato_GGJ/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Sequences">
+     <HintPath>/Users/aferry1/Desktop/Game Design Capstone/GitHub/HaPotato_GGJ/HaPotato_GGJ/Library/ScriptAssemblies/Unity.Sequences.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Recorder.Base">
+     <HintPath>/Users/aferry1/Desktop/Game Design Capstone/GitHub/HaPotato_GGJ/HaPotato_GGJ/Library/ScriptAssemblies/Unity.Recorder.Base.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
