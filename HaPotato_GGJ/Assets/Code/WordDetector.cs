@@ -14,7 +14,7 @@ public class WordDetector : MonoBehaviour
    public bool BDogTrigger = false;
    public bool GDogTrigger = false;
    public bool CakeTrigger = false;
-   public bool miniGameTrigger = false;
+   public bool miniGameTrigger1 = false;
    
    private void Start()
    {
@@ -36,8 +36,9 @@ public class WordDetector : MonoBehaviour
       _actions.Add("good dog", GoodDog);
       _actions.Add("good puppy", GoodDog);
       
-      _actions.Add("start game",GameStart);
-      _actions.Add("play",GameStart);
+      _actions.Add("start game",GameStart1);
+      _actions.Add("start game one",GameStart1);
+      _actions.Add("one",GameStart1);
       
       
       _actions.Add("kill", Kill);
@@ -55,9 +56,9 @@ public class WordDetector : MonoBehaviour
 
    #region Minigame Start
 
-   private void GameStart()
+   private void GameStart1()
    {
-      miniGameTrigger = true;
+      miniGameTrigger1 = true;
       Debug.Log("Good Dog Triggered");
    }
 
@@ -68,7 +69,7 @@ public class WordDetector : MonoBehaviour
 
    private void Stop()
       {
-         if (miniGameTrigger == true)
+         if (miniGameTrigger1 == true)
          {
             
          }
@@ -116,7 +117,7 @@ public class WordDetector : MonoBehaviour
    #region DogStuff
       private void BadDog()
       {
-         if (miniGameTrigger == true)
+         if (miniGameTrigger1 == true)
          {
 
             BDogTrigger = true;
@@ -125,9 +126,8 @@ public class WordDetector : MonoBehaviour
       }
       private void GoodDog()
       {
-         if (miniGameTrigger == true)
+         if (miniGameTrigger1 == true)
          {
-
             GDogTrigger = true;
             Debug.Log("Good Dog Triggered");
          }

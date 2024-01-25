@@ -32,7 +32,7 @@ public class CurtainCall : MonoBehaviour
             isWordToggled = false;
         }
 
-        if (_WordDetector.miniGameTrigger==true && miniGameCounter==0)
+        if (_WordDetector.miniGameTrigger1==true && miniGameCounter==0)
         {
             miniGameCounter++;
             StartMinigame();

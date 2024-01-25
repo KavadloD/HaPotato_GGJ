@@ -243,9 +243,9 @@ GameObject:
   - component: {fileID: 510671072}
   - component: {fileID: 510671070}
   - component: {fileID: 510671071}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AudioLoudnessDetector
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -833,7 +833,7 @@ MonoBehaviour:
   point1: {x: 0, y: 0}
   point2: {x: 0, y: 15}
   _WordDetector: {fileID: 510671071}
-  miniGame:
+  miniGames:
   - {fileID: 7109919819354042292, guid: 54b11e7ecd99dfd4fa602b0986bfc8ff, type: 3}
   miniGameCounter: 0
 --- !u!1 &1034076555
