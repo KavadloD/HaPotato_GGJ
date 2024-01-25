@@ -9,19 +9,26 @@ public class GoodDogTrigger : MonoBehaviour
     public WordDetector _wordDetector;
     private bool wordTriggered;
     private float targetTime;
+    private bool played;
     
     private GameObject neutralSprite;
     private GameObject winSprite;
     private GameObject loseSprite;
 
+    public AudioSource _audioSource;
+    public AudioClip Crowd_Cheer;
+    public AudioClip Crowd_Dissapoint;
+
     void Awake()
     {
+        _audioSource = GetComponent<AudioSource>();
         wordTriggered = false;
         targetTime = 5;
         amount = 2; 
         neutralSprite = this.transform.GetChild(0).gameObject; 
         winSprite = this.transform.GetChild(1).gameObject;
         loseSprite = this.transform.GetChild(2).gameObject;
+        played = false;
     }
     void FixedUpdate()
     {
@@ -35,14 +42,22 @@ public class GoodDogTrigger : MonoBehaviour
             amount++;
         }
         
+        //Lose
         if (amount < 2)
         {
             //Debug.Log("Lose Condition Met");
             neutralSprite.SetActive(false);
             loseSprite.SetActive(true);
             wordTriggered=false;
+
+            if (!played)
+            {
+                _audioSource.PlayOneShot(Crowd_Dissapoint);
+                played = true;
+            }
         }
         
+        //Neutral
         else if (amount == 2)
         {
             //Debug.Log("Neutral Condition met");
@@ -59,6 +74,7 @@ public class GoodDogTrigger : MonoBehaviour
             }
         }
         
+        //Win
         else if (amount > 2)
         {
             //Debug.Log("Win Condition 5 met resetting");
@@ -66,6 +82,12 @@ public class GoodDogTrigger : MonoBehaviour
             winSprite.SetActive(true);
             
             wordTriggered=false;
+            
+            if (!played)
+            {
+                _audioSource.PlayOneShot(Crowd_Cheer);
+                played = true;
+            }
         }
 
     }
