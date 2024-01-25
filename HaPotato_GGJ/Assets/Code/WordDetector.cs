@@ -11,7 +11,8 @@ public class WordDetector : MonoBehaviour
    private KeywordRecognizer _keywordRecognizer;
    private Dictionary<string, Action> _actions = new Dictionary<string, Action>();
    public bool menuOpening = false;
-   
+   public bool BDogTrigger = false;
+   public bool GDogTrigger = false;
    private void Start()
    {
       _actions.Add("return", Return);
@@ -21,8 +22,17 @@ public class WordDetector : MonoBehaviour
       _actions.Add("go", Go);
       _actions.Add("green", Green);
       _actions.Add("yellow", Yellow);
-      _actions.Add("bad", Bad);
-      _actions.Add("dog", Dog);
+      
+      
+      _actions.Add("bad", BadDog);
+      //_actions.Add("dog", BadDog);
+      _actions.Add("bad dog", BadDog);
+
+      _actions.Add("good", GoodDog);
+      _actions.Add("good boy", GoodDog);
+      _actions.Add("good dog", GoodDog);
+      _actions.Add("good puppy", GoodDog);
+      
       _actions.Add("kill", Kill);
 
       _keywordRecognizer = new KeywordRecognizer(_actions.Keys.ToArray());
@@ -36,6 +46,7 @@ public class WordDetector : MonoBehaviour
       _actions[speech.text].Invoke();
    }
 
+
    #region CommandWords
 
    private void Stop()
@@ -43,26 +54,16 @@ public class WordDetector : MonoBehaviour
          
       }
       
-      private void Green()
-      {
+    private void Green() 
+     {
          
-      }
+     }
 
     private void Yellow()
-    {
+     {
 
-    }
-
-    private void Bad()
-      {
-         
-      }
-      
-      private void Dog()
-      {
-         
-      }
-      private void Go()
+     }
+    private void Go()
       {
         
       }
@@ -81,7 +82,8 @@ public class WordDetector : MonoBehaviour
       {
          menuOpening = false;
       }
-
+   
+      
       private void Kill()
       {
          menuOpening = false;
@@ -89,6 +91,20 @@ public class WordDetector : MonoBehaviour
          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
       }
+   #endregion
+
+   #region DogStuff
+      private void BadDog()
+      {
+         BDogTrigger = true;
+         Debug.Log("Bad Dog Triggered");
+      }
+      private void GoodDog()
+      {
+         GDogTrigger = true;
+         Debug.Log("Good Dog Triggered");
+      }
+
    #endregion
 
 }
