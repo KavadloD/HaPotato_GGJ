@@ -1,13 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.UI;
 
 public class GoodDogTrigger : MonoBehaviour
 {
-    public int amount = 0; // This could be any variable that changes over time
+    public int amount; // This could be any variable that changes over time
     public WordDetector _wordDetector;
-    private bool wordTriggered=false;
+    private bool wordTriggered;
+    private float targetTime;
     
+    private GameObject neutralSprite;
+    private GameObject winSprite;
+    private GameObject loseSprite;
+
+    void Awake()
+    {
+        wordTriggered = false;
+        targetTime = 5;
+        amount = 2; 
+        neutralSprite = this.transform.GetChild(0).gameObject; 
+        winSprite = this.transform.GetChild(1).gameObject;
+        loseSprite = this.transform.GetChild(2).gameObject;
+    }
     void FixedUpdate()
     {
         if (_wordDetector.GDogTrigger == true)
@@ -20,33 +35,38 @@ public class GoodDogTrigger : MonoBehaviour
             amount++;
         }
         
-        if (amount==1)
+        if (amount < 2)
         {
-            Debug.Log("Condition 1 met");
+            //Debug.Log("Lose Condition Met");
+            neutralSprite.SetActive(false);
+            loseSprite.SetActive(true);
             wordTriggered=false;
         }
+        
         else if (amount == 2)
         {
-            Debug.Log("Condition 2 met");
+            //Debug.Log("Neutral Condition met");
+            
+            neutralSprite.SetActive(true);
+            
             wordTriggered=false;
-        }
-        else if (amount ==3)
-        {
-            Debug.Log("Condition 3 met");
-            wordTriggered=false;
-        }
-        else if (amount ==4)
-        {
-            Debug.Log("Condition 4 met");
-            wordTriggered=false;
-        }
-        else if (amount <4)
-        {
-            amount = 0;
-            Debug.Log("Condition 5 met resetting");
-            wordTriggered=false;
+            targetTime -= Time.deltaTime;
+
+            //Basic Timer
+            if (targetTime <= 0.0f && amount == 2)
+            {
+                amount--;
+            }
         }
         
-        
+        else if (amount > 2)
+        {
+            //Debug.Log("Win Condition 5 met resetting");
+            neutralSprite.SetActive(false);
+            winSprite.SetActive(true);
+            
+            wordTriggered=false;
+        }
+
     }
 }
