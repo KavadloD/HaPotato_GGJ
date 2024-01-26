@@ -38,9 +38,9 @@ public class WordDetector : MonoBehaviour
       _actions.Add("good dog", GoodDog);
       _actions.Add("good puppy", GoodDog);
       
-      _actions.Add("start game",GameStart1);
-      _actions.Add("start game one",GameStart1);
-      _actions.Add("one",GameStart1);
+      _actions.Add("start game",GameStart);
+      _actions.Add("start game one",GameStart);
+      _actions.Add("one",GameStart);
       
       
       
@@ -60,12 +60,12 @@ public class WordDetector : MonoBehaviour
 
    #region Minigame Start
 
-   private void GameStart1()
+   private void GameStart()
    {
       if (menuOpening == true)
       {
          miniGameTrigger1 = true;
-         Debug.Log("Good Dog Triggered");
+         Debug.Log("Starting the main game");
       }
       
    }
@@ -137,7 +137,7 @@ public class WordDetector : MonoBehaviour
          if (miniGameTrigger1 == true)
          {
             GDogTrigger = true;
-            Debug.Log("Good Dog Triggered");
+            Debug.Log("Good Dog Word heard Triggered");
          }
       }
 

@@ -20,9 +20,10 @@ public class GoodDogTrigger : MonoBehaviour
     public AudioSource _audioSource;
     public AudioClip Crowd_Cheer;
     public AudioClip Crowd_Dissapoint;
-    
+    private GameObject parentObject;
     void Awake()
     {
+        
         audioLayer = GameObject.FindGameObjectWithTag("GameController");
         
         _wordDetector = audioLayer.GetComponent<WordDetector>();
@@ -41,9 +42,10 @@ public class GoodDogTrigger : MonoBehaviour
 
     private void Start()
     {
-        AudioLoudnessDetecton[] audioLoudness = FindObjectsOfType<AudioLoudnessDetecton>();
+       // AudioLoudnessDetecton[] audioLoudness = FindObjectsOfType<AudioLoudnessDetecton>();
        
     }
+    
 
     void FixedUpdate()
     {
@@ -63,12 +65,16 @@ public class GoodDogTrigger : MonoBehaviour
             //Debug.Log("Lose Condition Met");
             neutralSprite.SetActive(false);
             loseSprite.SetActive(true);
+            
             wordTriggered=false;
 
             if (!played)
             {
                 _audioSource.PlayOneShot(Crowd_Dissapoint);
                 played = true;
+                _wordDetector.GDogTrigger = false;
+                
+                Invoke("DestroyParent", 6); //kills the minigame after conditon is met and 4 second have pass from this point of the code
             }
         }
         
@@ -92,6 +98,7 @@ public class GoodDogTrigger : MonoBehaviour
         //Win
         else if (amount > 2)
         {
+            _wordDetector.GDogTrigger = false;
             //Debug.Log("Win Condition 5 met resetting");
             neutralSprite.SetActive(false);
             winSprite.SetActive(true);
@@ -102,8 +109,28 @@ public class GoodDogTrigger : MonoBehaviour
             {
                 _audioSource.PlayOneShot(Crowd_Cheer);
                 played = true;
+                
+                Invoke("DestroyParent", 6); //kills the minigame after conditon is met and 4 second have pass from this point of the code
+
             }
         }
 
+      
+       
+       
     }
+    
+    void DestroyParent() //good join the dark side
+    { 
+        if (transform.parent != null) 
+        { 
+            Destroy(transform.parent.gameObject);
+            
+        }
+        else
+        { 
+            Debug.Log("This GameObject has no parent.");
+        }
+    }
+             
 }

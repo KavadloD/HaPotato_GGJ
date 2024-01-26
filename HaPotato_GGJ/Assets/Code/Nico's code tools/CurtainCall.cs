@@ -12,6 +12,9 @@ public class CurtainCall : MonoBehaviour
     public GameObject[] miniGames;
     public int miniGameCounter=0;
     private float targetTime=5.5f;
+    public bool minigameSpawned = false;
+    private GameObject instantiatedMiniGame;
+    
     void Update()
     {
         targetTime -= Time.deltaTime;
@@ -24,14 +27,15 @@ public class CurtainCall : MonoBehaviour
             transform.position = Vector2.Lerp(transform.position, point1, Time.deltaTime);
         }
 
-        // Check if the space bar is pressed or released
+        // Check if the Menu open words are said
         if (_WordDetector.menuOpening==true)
         {
-            isWordToggled = true;
+            isWordToggled = true; //Curtains Open
         }
         else if (_WordDetector.menuOpening==false)
         {
-            isWordToggled = false;
+            isWordToggled = false;//Curtains Close
+        
         }
 
         if (_WordDetector.miniGameTrigger1==true)
@@ -40,7 +44,8 @@ public class CurtainCall : MonoBehaviour
             StartMinigame();
             if (targetTime <= 0.0f)
             {
-                isWordToggled = false;
+                isWordToggled = false;// Lowers the Curtains when the timer hits zero
+            
             } 
         }
         
@@ -51,16 +56,27 @@ public class CurtainCall : MonoBehaviour
 
     public void StartMinigame()
     {
-        if (miniGameCounter == 0)
-        { 
-            targetTime = 5.5f;
-            int randomIndex = Random.Range(0, miniGames.Length);
-            Instantiate(miniGames[randomIndex], new Vector3(0, 0, 0), Quaternion.identity);
-            isWordToggled = true;
-            miniGameCounter++; 
+        if (minigameSpawned == false)
+        {
+            
+            SpawnMiniGame();
         }
-     
+
+        if (targetTime <= -4f) 
+        { 
+             //Destroy(instantiatedMiniGame); 
+             minigameSpawned = false; 
+        }
+    }
+
+    public void SpawnMiniGame() 
+    {   
+        minigameSpawned = true;
+        targetTime = 5.5f;// the mini game time
+        int randomIndex = Random.Range(0, miniGames.Length);// Grabs a random game from the list
+        GameObject instantiatedMiniGame = Instantiate(miniGames[randomIndex], new Vector3(0, 0, 0), Quaternion.identity); //Spawns in the scene as a game Object
+       
+        
         
     }
-    
 }
