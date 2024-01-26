@@ -11,8 +11,10 @@ public class CurtainCall : MonoBehaviour
     public WordDetector _WordDetector;
     public GameObject[] miniGames;
     public int miniGameCounter=0;
+    private float targetTime=5.5f;
     void Update()
     {
+        targetTime -= Time.deltaTime;
         if (isWordToggled)
         {
             transform.position = Vector2.Lerp(transform.position, point2, Time.deltaTime);
@@ -32,10 +34,14 @@ public class CurtainCall : MonoBehaviour
             isWordToggled = false;
         }
 
-        if (_WordDetector.miniGameTrigger1==true && miniGameCounter==0)
+        if (_WordDetector.miniGameTrigger1==true)
         {
-            miniGameCounter++;
+           
             StartMinigame();
+            if (targetTime <= 0.0f)
+            {
+                isWordToggled = false;
+            } 
         }
         
         
@@ -45,8 +51,15 @@ public class CurtainCall : MonoBehaviour
 
     public void StartMinigame()
     {
+        if (miniGameCounter == 0)
+        { 
+            targetTime = 5.5f;
+            int randomIndex = Random.Range(0, miniGames.Length);
+            Instantiate(miniGames[randomIndex], new Vector3(0, 0, 0), Quaternion.identity);
+            isWordToggled = true;
+            miniGameCounter++; 
+        }
      
-        Instantiate(miniGames[0], new Vector3(0, 0, 0), Quaternion.identity);
         
     }
     

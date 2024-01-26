@@ -58,8 +58,12 @@ public class WordDetector : MonoBehaviour
 
    private void GameStart1()
    {
-      miniGameTrigger1 = true;
-      Debug.Log("Good Dog Triggered");
+      if (menuOpening == true)
+      {
+         miniGameTrigger1 = true;
+         Debug.Log("Good Dog Triggered");
+      }
+      
    }
 
    #endregion
