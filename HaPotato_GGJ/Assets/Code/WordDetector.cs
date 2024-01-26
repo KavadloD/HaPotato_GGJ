@@ -14,7 +14,9 @@ public class WordDetector : MonoBehaviour
    public bool BDogTrigger = false;
    public bool GDogTrigger = false;
    public bool CakeTrigger = false;
+   public bool MurderTrigger = false;
    public bool miniGameTrigger1 = false;
+   public bool miniGameTrigger2 = false;
    
    private void Start()
    {
@@ -41,8 +43,10 @@ public class WordDetector : MonoBehaviour
       _actions.Add("one",GameStart1);
       
       
+      
       _actions.Add("kill", Kill);
       _actions.Add("cake",CakeFunc);
+      _actions.Add("murder",MurderFunc);
       _keywordRecognizer = new KeywordRecognizer(_actions.Keys.ToArray());
       _keywordRecognizer.OnPhraseRecognized += RecoginzedWords;
       _keywordRecognizer.Start();
@@ -138,11 +142,24 @@ public class WordDetector : MonoBehaviour
       }
 
    #endregion
+   
   #region CAKE
    private void CakeFunc()
       {
-        CakeTrigger = true;
+         CakeTrigger = true;
          Debug.Log("Cake Triggered");
       }
   #endregion
+  
+  #region MurderGame
+  private void MurderFunc()
+  {
+     {
+        MurderTrigger = true;
+        Debug.Log("Murder Triggered");
+     }
+  }
+
+  #endregion
 }
+
