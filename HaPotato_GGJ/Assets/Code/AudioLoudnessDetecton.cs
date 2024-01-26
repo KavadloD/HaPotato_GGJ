@@ -10,6 +10,7 @@ public class AudioLoudnessDetecton : MonoBehaviour
     private AudioClip microphoneClip;
     public float AudioThresh;
     public bool CakeTriggerer;
+    public bool MurderTrigger;
     public float volume;
 
     private void Start()
