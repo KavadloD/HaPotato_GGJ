@@ -39,7 +39,7 @@ public class Cake : MonoBehaviour
         //Checks threshold and switches to lose state if detects greater noise
         if (_wordDetector.volume >= volumeThresh)
         {
-            _wordDetector.CakeTrigger = false;
+            _wordDetector.MurderTrigger = false;
             wordTriggered = true;
         }
         if (wordTriggered == true)
