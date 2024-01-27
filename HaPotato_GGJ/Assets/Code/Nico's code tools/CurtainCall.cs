@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CurtainCall : MonoBehaviour
 {
@@ -16,8 +18,13 @@ public class CurtainCall : MonoBehaviour
     private bool minigameSpawned;
     private GameObject currentMinigame;
 
-    public DestroyMinigame destroyTrigger;
-    
+    public bool playerOne;
+
+    private void Awake()
+    {
+        playerOne = true;
+    }
+
     void Update()
     {
         targetTime -= Time.deltaTime;
@@ -48,15 +55,28 @@ public class CurtainCall : MonoBehaviour
                 SpawnMiniGame();
             }
 
-            if (targetTime <= 1.0f)
+            if (targetTime <= 4.0f)
             {
                 //Making this false lowers the curtain
                 isWordToggled = false;
 
-                if (targetTime <= -1f)
+                if (targetTime <= 2f)
                 {
                     currentMinigame = GameObject.FindGameObjectWithTag("MinigameParent");
                     Destroy(currentMinigame);
+                }
+                
+                if (targetTime <= 0f)
+                {
+                    if (playerOne)
+                    {
+                        playerOne = false;
+                    }
+                    else if (!playerOne)
+                    {
+                        playerOne = true;
+                    }
+                    
                     minigameSpawned = false;
                 }
             } 
@@ -66,7 +86,7 @@ public class CurtainCall : MonoBehaviour
     public void SpawnMiniGame()
     {
         minigameSpawned = true;
-        targetTime = 6.5f; // the mini game time
+        targetTime = 9.5f; // the mini game time
         int randomIndex = Random.Range(0, miniGames.Length); // Grabs a random game from the list
         GameObject instantiatedMiniGame =
             Instantiate(miniGames[randomIndex], new Vector3(0, 0, 0),

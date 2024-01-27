@@ -93,7 +93,6 @@
      <Compile Include="Assets\Code\Nico&apos;s code tools\ScrollUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\Code\Nico&apos;s code tools\SayCheeseTrigger.cs" />
-     <Compile Include="Assets\Code\DestroyMinigame.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Sprites" />
