@@ -17,7 +17,7 @@ public class GoodDogTrigger : MonoBehaviour
 
     private GameObject audioLayer;
         
-    public AudioSource _audioSource;
+    private AudioSource _audioSource;
     public AudioClip Crowd_Cheer;
     public AudioClip Crowd_Dissapoint;
     

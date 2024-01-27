@@ -8,15 +8,21 @@ public class MurderTrigger : MonoBehaviour
     public AudioLoudnessDetecton _wordDetector;
     private bool wordTriggered;
     public float volumeThresh;
-    
+    private bool played;
     private float targetTime;
     
     private GameObject neutralSprite;
     private GameObject winSprite;
     private GameObject loseSprite;
+    
+    private AudioSource _audioSource;
+    public AudioClip Crowd_Cheer;
+    public AudioClip Crowd_Dissapoint;
 
     void Awake()
     {
+        _audioSource = GetComponent<AudioSource>();
+        
         neutralSprite = this.transform.GetChild(0).gameObject; 
         winSprite = this.transform.GetChild(1).gameObject;
         loseSprite = this.transform.GetChild(2).gameObject;
@@ -45,6 +51,12 @@ public class MurderTrigger : MonoBehaviour
             loseSprite.SetActive(true);
 
             wordTriggered = false;
+            
+            if (!played)
+            {
+                _audioSource.PlayOneShot(Crowd_Dissapoint);
+                played = true;
+            }
         }
         else if (amount == 2)
         {
@@ -66,6 +78,12 @@ public class MurderTrigger : MonoBehaviour
             winSprite.SetActive(true);
             Debug.Log("Win Condition met");
             wordTriggered = false;
+            
+            if (!played)
+            {
+                _audioSource.PlayOneShot(Crowd_Cheer);
+                played = true;
+            }
         }
     }
 }

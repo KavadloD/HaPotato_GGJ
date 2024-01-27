@@ -265,7 +265,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460973828}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -410,7 +410,7 @@ Transform:
   - {fileID: 1089284757}
   - {fileID: 460973829}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1714492942
 GameObject:
@@ -546,66 +546,5 @@ Transform:
   - {fileID: 211607322}
   - {fileID: 1714492943}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &8181369173673770031
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8181369173763137080, guid: d8242862e79abc344862a653c3fe0d27, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8181369173763137080, guid: d8242862e79abc344862a653c3fe0d27, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8181369173763137080, guid: d8242862e79abc344862a653c3fe0d27, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8181369173763137080, guid: d8242862e79abc344862a653c3fe0d27, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8181369173763137080, guid: d8242862e79abc344862a653c3fe0d27, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8181369173763137080, guid: d8242862e79abc344862a653c3fe0d27, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8181369173763137080, guid: d8242862e79abc344862a653c3fe0d27, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8181369173763137080, guid: d8242862e79abc344862a653c3fe0d27, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8181369173763137080, guid: d8242862e79abc344862a653c3fe0d27, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8181369173763137080, guid: d8242862e79abc344862a653c3fe0d27, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8181369173763137080, guid: d8242862e79abc344862a653c3fe0d27, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8181369173763137081, guid: d8242862e79abc344862a653c3fe0d27, type: 3}
-      propertyPath: m_Name
-      value: MurderMinigame
-      objectReference: {fileID: 0}
-    - target: {fileID: 8181369175063003077, guid: d8242862e79abc344862a653c3fe0d27, type: 3}
-      propertyPath: _wordDetector
-      value: 
-      objectReference: {fileID: 1089284755}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d8242862e79abc344862a653c3fe0d27, type: 3}
