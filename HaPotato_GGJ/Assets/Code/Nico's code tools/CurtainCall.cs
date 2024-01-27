@@ -19,15 +19,24 @@ public class CurtainCall : MonoBehaviour
     private GameObject currentMinigame;
 
     public bool playerOne;
+    
+    private AudioSource _audioSource;
+    //public AudioClip BetweenTheme;
+
+    private bool played;
 
     private void Awake()
     {
         playerOne = true;
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         targetTime -= Time.deltaTime;
+        
+        print(targetTime);
+        
         if (isWordToggled)
         {
             transform.position = Vector2.Lerp(transform.position, point2, Time.deltaTime);
@@ -59,32 +68,51 @@ public class CurtainCall : MonoBehaviour
             {
                 //Making this false lowers the curtain
                 isWordToggled = false;
-
-                if (targetTime <= 2f)
+                
+                currentMinigame = GameObject.FindGameObjectWithTag("MinigameParent");
+                //print("got flag 1");
+            } 
+            
+            if (targetTime <= 3f)
+            {
+                if (minigameSpawned)
                 {
-                    currentMinigame = GameObject.FindGameObjectWithTag("MinigameParent");
-                    Destroy(currentMinigame);
+                    currentMinigame.GetComponent<AudioSource>().Stop();
+                }
+                else
+                {
+                    print("");
+                }
+
+                if (!played)
+                {
+                    _audioSource.Play();
+                    played = true;
+                }
+            }
+            
+            
+            if (targetTime <= -3f)
+            {
+                if (playerOne)
+                {
+                    playerOne = false;
+                }
+                else if (!playerOne)
+                {
+                    playerOne = true;
                 }
                 
-                if (targetTime <= 0f)
-                {
-                    if (playerOne)
-                    {
-                        playerOne = false;
-                    }
-                    else if (!playerOne)
-                    {
-                        playerOne = true;
-                    }
-                    
-                    minigameSpawned = false;
-                }
-            } 
+                minigameSpawned = false;
+                Destroy(currentMinigame);
+                //print("got flag 4");
+            }
         }
     }
 
     public void SpawnMiniGame()
     {
+        played = false;
         minigameSpawned = true;
         targetTime = 9.5f; // the mini game time
         int randomIndex = Random.Range(0, miniGames.Length); // Grabs a random game from the list

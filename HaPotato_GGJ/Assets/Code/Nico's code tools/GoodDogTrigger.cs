@@ -71,8 +71,6 @@ public class GoodDogTrigger : MonoBehaviour
             {
                 _audioSource.PlayOneShot(Crowd_Dissapoint);
                 played = true;
-                
-                Invoke("DestroyParent", 6); //kills the minigame after conditon is met and 4 second have pass from this point of the code
             }
         }
         
@@ -106,22 +104,7 @@ public class GoodDogTrigger : MonoBehaviour
             {
                 _audioSource.PlayOneShot(Crowd_Cheer);
                 played = true;
-                Invoke("DestroyParent", 6); //kills the minigame after conditon is met and 4 second have pass from this point of the code
             }
-        }
-
-    }
-    
-    void DestroyParent() //good join the dark side
-    { 
-        if (transform.parent != null) 
-        { 
-            Destroy(transform.parent.gameObject);
-            
-        }
-        else
-        { 
-            Debug.Log("This GameObject has no parent.");
         }
     }
 }
