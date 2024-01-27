@@ -15,6 +15,7 @@ public class WordDetector : MonoBehaviour
    public bool GDogTrigger = false;
    public bool CakeTrigger = false;
    public bool MurderTrigger = false;
+   public bool IslandTrigger = false;
    public bool miniGameTrigger1 = false;
    public bool miniGameTrigger2 = false;
    
@@ -27,6 +28,7 @@ public class WordDetector : MonoBehaviour
       _actions.Add("go", Go);
       _actions.Add("green", Green);
       _actions.Add("yellow", Yellow);
+      _actions.Add("help", Help);
 
 
       _actions.Add("bad", BadDog);
@@ -102,6 +104,14 @@ public class WordDetector : MonoBehaviour
          
       }
 
+      private void Help()
+      {
+         if (miniGameTrigger1 == true)
+         {
+            IslandTrigger = true;
+            Debug.Log("Island Triggered");
+         }
+      }
 
       private void Open()
       {
