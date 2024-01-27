@@ -27,8 +27,8 @@ public class WordDetector : MonoBehaviour
       _actions.Add("go", Go);
       _actions.Add("green", Green);
       _actions.Add("yellow", Yellow);
-      
-      
+
+
       _actions.Add("bad", BadDog);
       //_actions.Add("dog", BadDog);
       _actions.Add("bad dog", BadDog);

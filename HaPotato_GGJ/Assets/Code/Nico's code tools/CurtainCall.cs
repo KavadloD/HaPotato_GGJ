@@ -10,8 +10,14 @@ public class CurtainCall : MonoBehaviour
     private bool isWordToggled = false;
     public WordDetector _WordDetector;
     public GameObject[] miniGames;
-    public int miniGameCounter=0;
+    public bool miniGameCounter;
     private float targetTime=5.5f;
+
+    private bool minigameSpawned;
+    private GameObject currentMinigame;
+
+    public DestroyMinigame destroyTrigger;
+    
     void Update()
     {
         targetTime -= Time.deltaTime;
@@ -34,33 +40,36 @@ public class CurtainCall : MonoBehaviour
             isWordToggled = false;
         }
 
-        if (_WordDetector.miniGameTrigger1==true)
+        if (_WordDetector.miniGameTrigger1 == true) 
         {
-           
-            StartMinigame();
-            if (targetTime <= 0.0f)
+
+            if (minigameSpawned == false)
             {
+                SpawnMiniGame();
+            }
+
+            if (targetTime <= 1.0f)
+            {
+                //Making this false lowers the curtain
                 isWordToggled = false;
+
+                if (targetTime <= -1f)
+                {
+                    currentMinigame = GameObject.FindGameObjectWithTag("MinigameParent");
+                    Destroy(currentMinigame);
+                    minigameSpawned = false;
+                }
             } 
         }
-        
-        
-        
-        
     }
 
-    public void StartMinigame()
+    public void SpawnMiniGame()
     {
-        if (miniGameCounter == 0)
-        { 
-            targetTime = 5.5f;
-            int randomIndex = Random.Range(0, miniGames.Length);
-            Instantiate(miniGames[randomIndex], new Vector3(0, 0, 0), Quaternion.identity);
-            isWordToggled = true;
-            miniGameCounter++; 
-        }
-     
-        
+        minigameSpawned = true;
+        targetTime = 6.5f; // the mini game time
+        int randomIndex = Random.Range(0, miniGames.Length); // Grabs a random game from the list
+        GameObject instantiatedMiniGame =
+            Instantiate(miniGames[randomIndex], new Vector3(0, 0, 0),
+                Quaternion.identity); //Spawns in the scene as a game Object
     }
-    
 }

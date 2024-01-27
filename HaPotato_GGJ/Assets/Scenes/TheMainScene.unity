@@ -792,6 +792,7 @@ MonoBehaviour:
   sampleWindow: 64
   AudioThresh: 0
   CakeTriggerer: 0
+  MurderTrigger: 0
   volume: 0
 --- !u!114 &759352157
 MonoBehaviour:
@@ -809,7 +810,9 @@ MonoBehaviour:
   BDogTrigger: 0
   GDogTrigger: 0
   CakeTrigger: 0
+  MurderTrigger: 0
   miniGameTrigger1: 0
+  miniGameTrigger2: 0
 --- !u!4 &759352158
 Transform:
   m_ObjectHideFlags: 0
@@ -1416,7 +1419,7 @@ Transform:
   m_GameObject: {fileID: 1729766817}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 700771951}
@@ -1434,12 +1437,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ca948823c1c064a9add81cd2534db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point1: {x: 0, y: 0}
-  point2: {x: 0, y: 15}
+  point1: {x: 0, y: -2}
+  point2: {x: 0, y: 18}
   _WordDetector: {fileID: 759352157}
   miniGames:
   - {fileID: 7109919819354042292, guid: 54b11e7ecd99dfd4fa602b0986bfc8ff, type: 3}
+  - {fileID: 8181369173763137081, guid: d8242862e79abc344862a653c3fe0d27, type: 3}
   miniGameCounter: 0
+  destroyTrigger: {fileID: 0}
 --- !u!212 &1729766820
 SpriteRenderer:
   m_ObjectHideFlags: 0

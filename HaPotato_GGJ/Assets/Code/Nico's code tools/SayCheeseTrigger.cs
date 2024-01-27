@@ -1,87 +1,102 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MurderTrigger : MonoBehaviour
+public class SayCheeseTrigger : MonoBehaviour
 {
-    public int amount = 2; // This could be any variable that changes over time
-    public AudioLoudnessDetecton _wordDetector;
+    public int amount; // This could be any variable that changes over time
+    private WordDetector _wordDetector;
     private bool wordTriggered;
-    public float volumeThresh;
-    private bool played;
     private float targetTime;
+    private bool played;
     
     private GameObject neutralSprite;
     private GameObject winSprite;
     private GameObject loseSprite;
+
     private GameObject audioLayer;
-    
+        
     private AudioSource _audioSource;
     public AudioClip Crowd_Cheer;
     public AudioClip Crowd_Dissapoint;
-
+    
     void Awake()
     {
         audioLayer = GameObject.FindGameObjectWithTag("GameController");
-        _wordDetector = audioLayer.GetComponent<AudioLoudnessDetecton>();
         
+        _wordDetector = audioLayer.GetComponent<WordDetector>();
         _audioSource = GetComponent<AudioSource>();
+        wordTriggered = false;
+        targetTime = 5;
+        amount = 2; 
+        
+        
         
         neutralSprite = this.transform.GetChild(0).gameObject; 
         winSprite = this.transform.GetChild(1).gameObject;
         loseSprite = this.transform.GetChild(2).gameObject;
-        
-        targetTime = 5;
+        played = false; 
+    }
+
+    private void Start()
+    {
+        AudioLoudnessDetecton[] audioLoudness = FindObjectsOfType<AudioLoudnessDetecton>();
+       
     }
 
     void FixedUpdate()
     {
-        //Checks threshold and switches to lose state if detects greater noise
-        if (_wordDetector.volume >= volumeThresh)
+        if (_wordDetector.GDogTrigger == true)
         {
-            _wordDetector.MurderTrigger = false;
+            _wordDetector.GDogTrigger = false;
             wordTriggered = true;
         }
         if (wordTriggered == true)
         {
-            amount--;
+            amount++;
         }
-
+        
+        //Lose
         if (amount < 2)
         {
-            Debug.Log("Lose Condition met");
-
+            //Debug.Log("Lose Condition Met");
             neutralSprite.SetActive(false);
             loseSprite.SetActive(true);
+            wordTriggered=false;
 
-            wordTriggered = false;
-            
             if (!played)
             {
                 _audioSource.PlayOneShot(Crowd_Dissapoint);
                 played = true;
             }
         }
+        
+        //Neutral
         else if (amount == 2)
         {
+            //Debug.Log("Neutral Condition met");
+            
             neutralSprite.SetActive(true);
-            Debug.Log("Neutral Condition met");
-            wordTriggered = false;
-
+            
+            wordTriggered=false;
             targetTime -= Time.deltaTime;
 
-            //After allotted time switches to win state for being quiet 
+            //Basic Timer
             if (targetTime <= 0.0f && amount == 2)
             {
-                amount++;
+                amount--;
             }
         }
+        
+        //Win
         else if (amount > 2)
         {
+            //Debug.Log("Win Condition 5 met resetting");
             neutralSprite.SetActive(false);
             winSprite.SetActive(true);
-            Debug.Log("Win Condition met");
-            wordTriggered = false;
+            
+            wordTriggered=false;
             
             if (!played)
             {
@@ -89,5 +104,6 @@ public class MurderTrigger : MonoBehaviour
                 played = true;
             }
         }
+
     }
 }
