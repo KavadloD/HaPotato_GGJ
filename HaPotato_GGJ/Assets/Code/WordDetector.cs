@@ -17,6 +17,7 @@ public class WordDetector : MonoBehaviour
    public bool CakeTrigger = false;
    public bool MurderTrigger = false;
    public bool IslandTrigger = false;
+   public bool LetMeInTrigger = false;
    public bool miniGameTrigger1 = false;
    public bool yellowTrigger = false;
    public bool blueTrigger = false;
@@ -48,7 +49,7 @@ public class WordDetector : MonoBehaviour
       _actions.Add("start game one",GameStart1);
       _actions.Add("one",GameStart1);
       
-      
+      _actions.Add("let me in",LetMeIn);
       
       _actions.Add("kill", Kill);
       _actions.Add("cake",CakeFunc);
@@ -79,6 +80,11 @@ public class WordDetector : MonoBehaviour
 
    #region CommandWords
 
+   private void LetMeIn()
+   {
+      LetMeInTrigger = true;
+      Debug.Log("Let Me In Triggered");
+   }
    private void Stop()
       {
          if (miniGameTrigger1 == true)
