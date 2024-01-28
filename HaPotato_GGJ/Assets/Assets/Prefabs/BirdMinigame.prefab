@@ -585,7 +585,7 @@ GameObject:
   - component: {fileID: 2658331373682007768}
   m_Layer: 0
   m_Name: BirdMinigame
-  m_TagString: Untagged
+  m_TagString: MinigameParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
