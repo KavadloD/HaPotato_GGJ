@@ -33,8 +33,9 @@ public class WordDetector : MonoBehaviour
 
 
       _actions.Add("bad", BadDog);
-      //_actions.Add("dog", BadDog);
+      _actions.Add("drop", BadDog);
       _actions.Add("bad dog", BadDog);
+      _actions.Add("no", BadDog);
 
       _actions.Add("good", GoodDog);
       _actions.Add("good boy", GoodDog);
@@ -142,6 +143,8 @@ public class WordDetector : MonoBehaviour
    #region DogStuff
       private void BadDog()
       {
+         BDogTrigger = true;
+         Debug.Log("Bad Dog Triggered");
          if (miniGameTrigger1 == true)
          {
 
