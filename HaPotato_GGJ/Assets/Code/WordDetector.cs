@@ -18,6 +18,8 @@ public class WordDetector : MonoBehaviour
    public bool MurderTrigger = false;
    public bool IslandTrigger = false;
    public bool miniGameTrigger1 = false;
+   public bool yellowTrigger = false;
+   public bool blueTrigger = false;
    //public bool miniGameTrigger2 = false;
    
    private void Start()
@@ -27,7 +29,7 @@ public class WordDetector : MonoBehaviour
       _actions.Add("cheese", Cheese);
       _actions.Add("stop",Stop);
       _actions.Add("go", Go);
-      _actions.Add("green", Green);
+      _actions.Add("blue", Blue);
       _actions.Add("yellow", Yellow);
       _actions.Add("help", Help);
 
@@ -84,14 +86,16 @@ public class WordDetector : MonoBehaviour
          }
       }
       
-    private void Green() 
+    private void Blue() 
      {
-         
+      blueTrigger = true;
+      Debug.Log("blueTrigger Triggered");   
      }
 
     private void Yellow()
      {
-
+      yellowTrigger = true;
+      Debug.Log("yellowTrigger Triggered");  
      }
     private void Go()
       {
