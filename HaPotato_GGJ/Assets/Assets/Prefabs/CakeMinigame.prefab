@@ -496,6 +496,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8314313854800705204}
   - component: {fileID: 4503795638946416153}
+  - component: {fileID: -8283932054266243421}
   m_Layer: 0
   m_Name: CakeMinigame
   m_TagString: MinigameParent
@@ -615,3 +616,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-8283932054266243421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9039624728148238091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a788c76a84ab56f40b883603b9266917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myString: Blow

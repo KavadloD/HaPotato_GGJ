@@ -346,6 +346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9144922031783334740}
   - component: {fileID: 1189158949}
+  - component: {fileID: -971270788236080984}
   m_Layer: 0
   m_Name: SayCheeseMinigame
   m_TagString: MinigameParent
@@ -465,6 +466,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-971270788236080984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9144922031783334741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a788c76a84ab56f40b883603b9266917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myString: Cheese
 --- !u!1 &9144922032136811896
 GameObject:
   m_ObjectHideFlags: 0

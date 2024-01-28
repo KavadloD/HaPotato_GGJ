@@ -18,7 +18,7 @@ public class WordDetector : MonoBehaviour
    public bool MurderTrigger = false;
    public bool IslandTrigger = false;
    public bool miniGameTrigger1 = false;
-   public bool miniGameTrigger2 = false;
+   //public bool miniGameTrigger2 = false;
    
    private void Start()
    {
@@ -65,10 +65,9 @@ public class WordDetector : MonoBehaviour
 
    private void GameStart1()
    {
-      if (menuOpening == true)
-      {
+         menuOpening = true;
          Debug.Log("Good Dog Triggered");
-      }
+      
       
    }
 

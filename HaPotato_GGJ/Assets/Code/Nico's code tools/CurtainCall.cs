@@ -169,10 +169,10 @@ public class CurtainCall : MonoBehaviour
             {
                 
            
-            minigameSpawned = false; 
-            Destroy(currentMinigame); 
+                minigameSpawned = false; 
+                Destroy(currentMinigame); 
             }
-                             //print("got flag 4");
+            //print("got flag 4");
         }
     }
 
@@ -181,10 +181,12 @@ public class CurtainCall : MonoBehaviour
         played = false;
         minigameSpawned = true;
         targetTime = 9.5f; // the mini game time
+        
         int randomIndex = Random.Range(0, miniGames.Length); // Grabs a random game from the list
         GameObject instantiatedMiniGame =
             Instantiate(miniGames[randomIndex], new Vector3(0, 0, 0),
                 Quaternion.identity); //Spawns in the scene as a game Object
+        FindGameIds();
     }
     
     void UpdateUIText(string newText)
@@ -192,7 +194,6 @@ public class CurtainCall : MonoBehaviour
         // Update the text property of the UI Text component
         uiText.text = newText;
     }
-    
     void UpdateIDis(string newText2)
     {  
         // Update the text property of the UI Text component
@@ -206,5 +207,16 @@ public class CurtainCall : MonoBehaviour
         miniGameDiscrip = minigameID.myString;
         UpdateIDis(minigameID.myString);
 
+    }
+    
+    IEnumerator ScaleOverTime()
+    {
+        float t = 0;
+        while (t <= 1)
+        {
+            t += Time.deltaTime / duration;
+            uiText.transform.localScale = Vector3.Lerp(initialScale, targetScale, t);
+            yield return null;
+        }
     }
 }
