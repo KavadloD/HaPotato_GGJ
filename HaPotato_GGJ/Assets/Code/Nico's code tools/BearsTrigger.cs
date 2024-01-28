@@ -102,9 +102,6 @@ public int amount = 2; // This could be any variable that changes over time
                 played = true;
             }
         }
-
-
-        
     }
         void UpdateUIText(string newText)
         {

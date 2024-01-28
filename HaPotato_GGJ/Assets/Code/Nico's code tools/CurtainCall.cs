@@ -186,7 +186,7 @@ public class CurtainCall : MonoBehaviour
         GameObject instantiatedMiniGame =
             Instantiate(miniGames[randomIndex], new Vector3(0, 0, 0),
                 Quaternion.identity); //Spawns in the scene as a game Object
-        FindGameIds();
+        //FindGameIds();
     }
     
     void UpdateUIText(string newText)
