@@ -7,23 +7,50 @@ using Random = UnityEngine.Random;
 
 public class CurtainCall : MonoBehaviour
 {
+    #region Inital spots
+
     // Define the public Vector2 variables for the two points
     public Vector2 point1;
     public Vector2 point2;
-    private bool isWordToggled = false;
+    #endregion
+    
+    #region Curtain controller
+    
+    private bool isWordToggled = false; 
     public WordDetector _WordDetector;
+
+    #endregion
+    
+    #region MiniGameControllers
+
     public GameObject[] miniGames;
     public bool miniGameCounter;
     private float targetTime=5.5f;
-
+    
     private bool minigameSpawned;
     private GameObject currentMinigame;
 
-    public bool playerOne;
+    #endregion
+
+    #region UI Text
     
+    public Text discripText;
     public Text uiText;
+
+    [SerializeField] private float duration = 1f;
+
+    private Vector3 initialScale;
+    private Vector3 targetScale;
+
+    #endregion
+    
+    public bool playerOne;
+    public bool playerTrigger=false;
+    
+    
     public string playerOneString;
     public string playerTwoString;
+    private string miniGameDiscrip;
     
     private AudioSource _audioSource;
     //public AudioClip BetweenTheme;
@@ -41,7 +68,15 @@ public class CurtainCall : MonoBehaviour
     void Update()
     {
         targetTime -= Time.deltaTime;
-        
+        if (_WordDetector.miniGameTrigger1==false)
+        {
+            UpdateUIText(null);//removes it from the menu
+            UpdateIDis(null);//removes it from the menu
+        }
+        else
+        {
+            //UpdateUIText(playerOneString);
+        }
         //print(targetTime);
         
         if (isWordToggled)
@@ -69,6 +104,17 @@ public class CurtainCall : MonoBehaviour
             if (minigameSpawned == false)
             {
                 SpawnMiniGame();
+            }
+            if (targetTime < 8.5f&& targetTime >4.5)
+            {
+                UpdateUIText(null); //removes it from the Mini Game Screen
+                UpdateIDis(null); //removes it from the Mini Game Screen
+               
+            }
+
+            if (targetTime >= 4)
+            {
+                playerTrigger = false;//checks if the player is flipping 
             }
 
             if (targetTime <= 4.0f)
@@ -99,23 +145,34 @@ public class CurtainCall : MonoBehaviour
             }
             
             
-            if (targetTime <= -3f)
+            if (targetTime<=3 && playerTrigger==false)
             {
                 if (playerOne)
                 {
+                    Debug.Log("Made it here P2");
                     playerOne = false;
                     UpdateUIText(playerTwoString);
+                    playerTrigger = true;
                 }
                 else if (!playerOne)
                 {
+                    Debug.Log("Made it here P1");
                     playerOne = true;
                     UpdateUIText(playerOneString);
+                    playerTrigger = true;
                 }
                 
-                minigameSpawned = false;
-                Destroy(currentMinigame);
-                //print("got flag 4");
+              
             }
+
+            if (targetTime <= -4)
+            {
+                
+           
+            minigameSpawned = false; 
+            Destroy(currentMinigame); 
+            }
+                             //print("got flag 4");
         }
     }
 
@@ -134,5 +191,20 @@ public class CurtainCall : MonoBehaviour
     {
         // Update the text property of the UI Text component
         uiText.text = newText;
+    }
+    
+    void UpdateIDis(string newText2)
+    {  
+        // Update the text property of the UI Text component
+        discripText.text = newText2;
+    }
+
+    void FindGameIds()
+    {
+        currentMinigame = GameObject.FindGameObjectWithTag("MinigameParent");
+        MiniGameWordStorage minigameID = currentMinigame.GetComponent<MiniGameWordStorage>();
+        miniGameDiscrip = minigameID.myString;
+        UpdateIDis(minigameID.myString);
+
     }
 }
