@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class LoudestBirdTrigger : MonoBehaviour
 {
@@ -22,10 +22,7 @@ public class LoudestBirdTrigger : MonoBehaviour
     public AudioClip Crowd_Dissapoint;
     public float timer;
 
-    public Text uiText;
-    public string myString = "Hello, Unity!";
     
-
     void Awake()
     {
         audioLayer = GameObject.FindGameObjectWithTag("GameController");
@@ -38,19 +35,7 @@ public class LoudestBirdTrigger : MonoBehaviour
         loseSprite = this.transform.GetChild(2).gameObject;
         
         targetTime = 5;
-
-
-
-         // Check if the Text component is assigned
-        if (uiText == null)
-        {
-            Debug.LogError("UI Text component not assigned!");
-            return;
-        }
-
-        // Update the Text component with the string
-        UpdateUIText(myString);
-
+        
     }
     
 
@@ -125,10 +110,4 @@ public class LoudestBirdTrigger : MonoBehaviour
 
         
     }
-        void UpdateUIText(string newText)
-        {
-             // Update the text property of the UI Text component
-            uiText.text = newText;
-        }
-    
 }
