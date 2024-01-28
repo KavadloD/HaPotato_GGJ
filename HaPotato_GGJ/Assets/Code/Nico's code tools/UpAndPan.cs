@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class UpAndPan : MonoBehaviour
 {
-    public RectTransform imageTransform;
+    public Transform imageTransform;
     public float moveSpeed = 1f;
     public float panSpeed = 1f;
     public float maxYPos = 5f;
@@ -14,42 +14,42 @@ public class UpAndPan : MonoBehaviour
     public bool panningOn=true;
     private void Start()
     {
-        startYPos = imageTransform.anchoredPosition.y;
+        startYPos = imageTransform.position.y;
     }
 
     private void Update()
     {
-        imageTransform.anchoredPosition += Vector2.up * moveSpeed * Time.deltaTime;
+        imageTransform.position += Vector3.up * moveSpeed * Time.deltaTime;
 
         // Check if the image has reached the maxYPos
-        if (imageTransform.anchoredPosition.y >= maxYPos)
+        if (imageTransform.position.y >= maxYPos)
         {
             movingUp = false;
-            imageTransform.anchoredPosition = new Vector2(imageTransform.anchoredPosition.x, startYPos);
+            imageTransform.position = new Vector3(imageTransform.position.x, startYPos, imageTransform.position.z);
         }
 
         if (panningOn == true)
         {
        
 
-        float newXPos = Mathf.PingPong(Time.time * panSpeed, startXPosRange * 2) - startXPosRange;
-        imageTransform.anchoredPosition = new Vector2(newXPos, imageTransform.anchoredPosition.y);
+            float newXPos = Mathf.PingPong(Time.time * panSpeed, startXPosRange * 2) - startXPosRange;
+            imageTransform.position = new Vector3(newXPos, imageTransform.position.y, imageTransform.position.z);
       
-        // Check if the image has reached the startXPos
-        if (newXPos <= -startXPosRange)
-        {
-            panningLeft = false;
+            // Check if the image has reached the startXPos
+            if (newXPos <= -startXPosRange)
+            {
+                panningLeft = false;
+            }
+            else if (newXPos >= startXPosRange)
+            {
+                panningLeft = true;
+            }
         }
-        else if (newXPos >= startXPosRange)
-        {
-            panningLeft = true;
-        }
-         }
         // Check if the image has reached the maxYPos and reset its position
-        if (!movingUp && imageTransform.anchoredPosition.y <= startYPos)
+        if (!movingUp && imageTransform.position.y <= startYPos)
         {
             movingUp = true;
-            imageTransform.anchoredPosition = new Vector2(imageTransform.anchoredPosition.x, startYPos);
+            imageTransform.position = new Vector3(imageTransform.position.x, startYPos, imageTransform.position.z);
         }
     }
 }
