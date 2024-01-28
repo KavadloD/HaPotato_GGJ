@@ -42,7 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Code\Nico&apos;s code tools\OBJPulse.cs" />
-     <Compile Include="Assets\LoudestBirdTrigger.cs" />
+     <Compile Include="Assets\Code\LoudestBirdTrigger.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
      <Compile Include="Assets\Code\Chopper.cs" />
      <Compile Include="Assets\Code\Nico&apos;s code tools\UpAndPan.cs" />

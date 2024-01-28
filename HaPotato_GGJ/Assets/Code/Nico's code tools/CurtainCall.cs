@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class CurtainCall : MonoBehaviour
@@ -20,6 +21,10 @@ public class CurtainCall : MonoBehaviour
 
     public bool playerOne;
     
+    public Text uiText;
+    public string playerOneString;
+    public string playerTwoString;
+    
     private AudioSource _audioSource;
     //public AudioClip BetweenTheme;
 
@@ -29,13 +34,15 @@ public class CurtainCall : MonoBehaviour
     {
         playerOne = true;
         _audioSource = GetComponent<AudioSource>();
+        
+        UpdateUIText(playerOneString);
     }
 
     void Update()
     {
         targetTime -= Time.deltaTime;
         
-        //print(targetTime);
+        print(targetTime);
         
         if (isWordToggled)
         {
@@ -97,10 +104,12 @@ public class CurtainCall : MonoBehaviour
                 if (playerOne)
                 {
                     playerOne = false;
+                    UpdateUIText(playerTwoString);
                 }
                 else if (!playerOne)
                 {
                     playerOne = true;
+                    UpdateUIText(playerOneString);
                 }
                 
                 minigameSpawned = false;
@@ -119,5 +128,11 @@ public class CurtainCall : MonoBehaviour
         GameObject instantiatedMiniGame =
             Instantiate(miniGames[randomIndex], new Vector3(0, 0, 0),
                 Quaternion.identity); //Spawns in the scene as a game Object
+    }
+    
+    void UpdateUIText(string newText)
+    {
+        // Update the text property of the UI Text component
+        uiText.text = newText;
     }
 }

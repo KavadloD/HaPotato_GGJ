@@ -498,7 +498,7 @@ GameObject:
   - component: {fileID: 4503795638946416153}
   m_Layer: 0
   m_Name: CakeMinigame
-  m_TagString: Untagged
+  m_TagString: MinigameParent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
