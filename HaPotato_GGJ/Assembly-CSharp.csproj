@@ -95,6 +95,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
      <Compile Include="Assets\Code\Nico&apos;s code tools\ScrollUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+     <Compile Include="Assets\Code\Nico&apos;s code tools\BearsTrigger.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <Folder Include="Assets\Assets\Images\Final Sprites\Crossing Street" />
@@ -131,6 +132,7 @@
      <Folder Include="Assets\Assets\Images\Dino_Roar\Cat_Test" />
      <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Resources" />
      <Folder Include="Assets\Assets\Images\Backgrounds" />
+     <Folder Include="Assets\Code\Nico&apos;s code tools\BearsTrigger" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
