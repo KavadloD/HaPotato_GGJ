@@ -29,7 +29,11 @@ public class WordDetector : MonoBehaviour
       _actions.Add("cheese", Cheese);
       _actions.Add("stop",Stop);
       _actions.Add("go", Go);
+<<<<<<< Updated upstream
       _actions.Add("blue", Blue);
+=======
+       _actions.Add("blue", Blue);
+>>>>>>> Stashed changes
       _actions.Add("yellow", Yellow);
       _actions.Add("help", Help);
 
@@ -88,15 +92,26 @@ public class WordDetector : MonoBehaviour
       
     private void Blue() 
      {
+<<<<<<< Updated upstream
       blueTrigger = true;
       Debug.Log("blueTrigger Triggered");   
+=======
+        blueTrigger = true;
+        Debug.Log("blueTriggered");
+>>>>>>> Stashed changes
      }
 
     private void Yellow()
      {
+<<<<<<< Updated upstream
       yellowTrigger = true;
       Debug.Log("yellowTrigger Triggered");  
      }
+=======
+        yellowTrigger = true;
+        Debug.Log("yellowTriggered");
+    }
+>>>>>>> Stashed changes
     private void Go()
       {
         

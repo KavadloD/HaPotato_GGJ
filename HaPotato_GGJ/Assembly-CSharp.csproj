@@ -99,6 +99,10 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Code\AudioLoudnessDetecton.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
+<<<<<<< Updated upstream
+=======
+    <Compile Include="Assets\Code\Nico&apos;s code tools\IslandTrigger.cs" />
+>>>>>>> Stashed changes
     <Compile Include="Assets\Code\Nico&apos;s code tools\GoodDogTrigger.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Code\WordDetector.cs" />
