@@ -53,6 +53,7 @@
      <Compile Include="Assets\Code\Nico&apos;s code tools\BadDogTriggers.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
+     <Compile Include="Assets\Code\Nico&apos;s code tools\LetMeIn.cs" />
      <Compile Include="Assets\Code\Nico&apos;s code tools\BadDogHead.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
@@ -99,7 +100,8 @@
      <Compile Include="Assets\Code\Nico&apos;s code tools\ScrollUI.cs" />
      <Compile Include="Assets\Code\Nico&apos;s code tools\GodzillaTrigger.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-     <Compile Include="Assets\Code\Nico&apos;s code tools\LetMeIn.cs" />
+     <Compile Include="Assets\Code\Nico&apos;s code tools\PotatoTImer.cs" />
+     <Compile Include="Assets\Code\Nico&apos;s code tools\FuseMove.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <Folder Include="Assets\Assets\Images\Final Sprites\Crossing Street" />

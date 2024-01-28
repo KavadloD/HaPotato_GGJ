@@ -9,6 +9,7 @@ public class ScaleFromMic : MonoBehaviour
     public Vector3 minSize;
     public Vector3 maxSize;
 
+    public float thiccness;
     public AudioLoudnessDetecton _loudnessDetecton;
 
     public float loudnessSensitivity = 100;
@@ -27,7 +28,7 @@ public class ScaleFromMic : MonoBehaviour
                          loudnessSensitivity;
         if (loudness < threshold)
             loudness = 0;
-        transform.localScale = Vector3.Lerp(minSize, maxSize, loudness);
+            transform.localScale = new Vector3(thiccness, loudness/23, 0);
         
 
 

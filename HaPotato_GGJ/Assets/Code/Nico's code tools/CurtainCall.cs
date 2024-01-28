@@ -27,7 +27,7 @@ public class CurtainCall : MonoBehaviour
     public bool miniGameCounter;
     private float targetTime=5.5f;
     
-    private bool minigameSpawned;
+    public bool minigameSpawned;
     private GameObject currentMinigame;
 
     #endregion
