@@ -356,7 +356,7 @@ MonoBehaviour:
   bg: {fileID: 3804768224158575047}
   win: {fileID: 3804768225834598721}
   lose: {fileID: 3804768225172852588}
-  winSprite: {fileID: 21300000, guid: adddbaca7a05b5948b1bc694faca4c18, type: 3}
+  winSprite: {fileID: 21300000, guid: 9d57059378f1a8348b8ddad6ce421b74, type: 3}
   lossSprite: {fileID: 21300000, guid: 926db9622ab02954bab3063402ce97d0, type: 3}
   winloss: 0
 --- !u!82 &3804768225372738973

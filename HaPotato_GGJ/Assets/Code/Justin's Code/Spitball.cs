@@ -3,18 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEditor.Tilemaps;
+using UnityEditor;
 
 public class Spitball : MonoBehaviour
 {
   public int amount = 1; // This could be any variable that changes over time
     public AudioLoudnessDetecton _wordDetector;
     private bool wordTriggered=false;
-    public float volumeThresh=0.07f;
-    [SerializeField] GameObject ball;
-    [SerializeField] GameObject teacher;
     [SerializeField] SpitballStatus gameStatus;
-    [SerializeField] TMP_Text timerText;
-    [SerializeField] GameObject win, lose;
+    [SerializeField] Sprite winSprite,loseSprite,turnSprite;
+    [SerializeField] SpriteRenderer bg;
     public float TimeTeacherBecomesHittable;
     private float startTime;
     private bool shot;
@@ -22,14 +20,39 @@ public class Spitball : MonoBehaviour
     private bool teacherTurned;
     private float StartTime;
 
+    private AudioSource _audioSource;
+    private GameObject audioLayer;
+
+    public float volumeThresh;
+    public float loseTime;
+
 
     void Start(){
         shot = false;
         shotHasBeenChecked = false;
         startTime = Time.time;
     
-        Vector2 v = new Vector2(400,0);
-        ball.GetComponent<Rigidbody2D>().AddForce(v);
+        wordTriggered = false;
+        audioLayer = GameObject.FindGameObjectWithTag("GameController");
+        _wordDetector = audioLayer.GetComponent<AudioLoudnessDetecton>();
+        
+        _audioSource = GetComponent<AudioSource>();
+        gameStatus = SpitballStatus.Ingame;
+        startTime = Time.time;
+    }
+
+    void FixedUpdate(){
+        print(_wordDetector.volume);
+        //Checks threshold and switches to lose state if detects greater noise
+        if (_wordDetector.volume >= volumeThresh)
+        {
+            _wordDetector.MurderTrigger = false;
+            wordTriggered = true;
+        }
+        if (wordTriggered == true)
+        {
+            shot = true;
+        }
     }
     
     void Update(){
@@ -37,11 +60,6 @@ public class Spitball : MonoBehaviour
     
             // Check if spitting
             if(shot && !shotHasBeenChecked){
-                
-                // Shoots the actual ball
-                ball.SetActive(true);
-                Vector2 v = new Vector2(400,0);
-                ball.GetComponent<Rigidbody2D>().AddForce(v);
 
                 // Check if valid timing
                 if(teacherTurned){
@@ -54,45 +72,28 @@ public class Spitball : MonoBehaviour
             }
 
             // Check for timer loss and update time
-            if(Time.time > StartTime + 5){
+            if(Time.time > StartTime + loseTime){
                 gameStatus = SpitballStatus.Lost;
             }
-            timerText.text = string.Format("{0:N3}", Time.time - StartTime);
         }
 
         // Turn the teacher at the right time
         if(!teacherTurned){
             if(Time.time > StartTime + TimeTeacherBecomesHittable){
-                teacher.transform.Rotate(180,0,180);
                 teacherTurned = true;
+                bg.sprite = turnSprite;
             }
         }
 
-        // Enable win/loss test sprites
+        // Enable win/loss sprites
         if(gameStatus == SpitballStatus.Won){
-            win.SetActive(true);
+            bg.sprite = winSprite;
         }
         if(gameStatus == SpitballStatus.Lost){
-            lose.SetActive(true);
+            bg.sprite = loseSprite;
         }
     }
 
-    void FixedUpdate()
-    {
-        if (_wordDetector.volume >= volumeThresh)
-        {
-            _wordDetector.CakeTriggerer = false;
-            wordTriggered = true;
-        }
-        if (wordTriggered == true)
-        {
-            if(!shot){
-                shot = true;
-            }
-        }
-        
-        
-    }
 
     // The enum for gameStatus
     public enum SpitballStatus{Ingame, Lost, Won}
