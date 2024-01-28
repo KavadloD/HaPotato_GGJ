@@ -46,7 +46,7 @@ public class CurtainCall : MonoBehaviour
     
     public bool playerOne;
     public bool playerTrigger=false;
-    
+    private int lastRolledNum;
     
     public string playerOneString;
     public string playerTwoString;
@@ -183,9 +183,28 @@ public class CurtainCall : MonoBehaviour
         targetTime = 9.5f; // the mini game time
         
         int randomIndex = Random.Range(0, miniGames.Length); // Grabs a random game from the list
-        GameObject instantiatedMiniGame =
-            Instantiate(miniGames[randomIndex], new Vector3(0, 0, 0),
-                Quaternion.identity); //Spawns in the scene as a game Object
+
+        int randomAddon = Random.Range(1, miniGames.Length);
+
+        if (lastRolledNum == randomIndex)
+        {
+            GameObject instantiatedMiniGame =
+                Instantiate(miniGames[randomIndex+randomAddon], new Vector3(0, 0, 0),
+                    Quaternion.identity); //Spawns in the scene as a game Object     
+        }
+        else
+        {
+            GameObject instantiatedMiniGame =
+                Instantiate(miniGames[randomIndex], new Vector3(0, 0, 0),
+                    Quaternion.identity); //Spawns in the scene as a game Object
+        }
+
+        if (randomIndex < miniGames.Length)
+        {
+            randomIndex = miniGames.Length;
+        }
+        
+        lastRolledNum = randomIndex;
         //FindGameIds();
     }
     
