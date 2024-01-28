@@ -19,6 +19,7 @@ public class LoudestBirdTrigger : MonoBehaviour
     private AudioSource _audioSource;
     public AudioClip Crowd_Cheer;
     public AudioClip Crowd_Dissapoint;
+    private float timer=5f;
 
     void Awake()
     {
@@ -39,13 +40,25 @@ public class LoudestBirdTrigger : MonoBehaviour
         //Checks threshold and switches to lose state if detects greater noise
         if (_wordDetector.volume >= volumeThresh)
         {
+
             _wordDetector.MurderTrigger = false;
-            wordTriggered = true;
+            timer-=Time.deltaTime;
+
+            if(timer<=0)
+            {
+                wordTriggered = true;
+                Debug.Log("AAAAAAAAAAAAAAAAAAAA");   
+            }
+            
+
+
         }
         if (wordTriggered == true)
         {
             amount--;
         }
+
+
 
         if (amount < 2)
         {
@@ -90,4 +103,6 @@ public class LoudestBirdTrigger : MonoBehaviour
             }
         }
     }
+
+    
 }
