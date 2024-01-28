@@ -36,7 +36,7 @@ public class Cake : MonoBehaviour
 
     void FixedUpdate()
     {
-        print(_wordDetector.volume);
+       // print(_wordDetector.volume);
         //Checks threshold and switches to lose state if detects greater noise
         if (_wordDetector.volume >= volumeThresh)
         {

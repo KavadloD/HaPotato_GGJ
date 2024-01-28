@@ -67,7 +67,7 @@ public class WordDetector : MonoBehaviour
    {
       if (menuOpening == true)
       {
-         Debug.Log("Good Dog Triggered");
+         Debug.Log("GameStartTriggered");
       }
       
    }
