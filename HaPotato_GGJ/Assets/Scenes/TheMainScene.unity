@@ -889,6 +889,7 @@ MonoBehaviour:
   menuOpening: 0
   BDogTrigger: 0
   GDogTrigger: 0
+  CheeseTrigger: 0
   CakeTrigger: 0
   MurderTrigger: 0
   IslandTrigger: 0
@@ -1360,13 +1361,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1563721600}
   - component: {fileID: 1563721599}
+  - component: {fileID: 1563721601}
   m_Layer: 0
   m_Name: startmenu-alternatev2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1563721599
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1434,6 +1436,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1563721601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563721598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db2cf85c9789d134a9333382b1462f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxScale: 0.22
+  minScale: 0.2
+  speed: 1
 --- !u!1 &1652990896
 GameObject:
   m_ObjectHideFlags: 0
@@ -1522,7 +1539,8 @@ MonoBehaviour:
   point1: {x: 0, y: -2}
   point2: {x: 0, y: 18}
   _WordDetector: {fileID: 759352157}
-  miniGames: []
+  miniGames:
+  - {fileID: 9144922031783334741, guid: c286fe3953779374a8adcc471dd5c6b6, type: 3}
   miniGameCounter: 0
   playerOne: 0
   uiText: {fileID: 24798333}

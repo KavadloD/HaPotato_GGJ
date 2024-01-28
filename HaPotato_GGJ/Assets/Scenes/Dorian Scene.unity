@@ -258,6 +258,9 @@ MonoBehaviour:
   miniGames: []
   miniGameCounter: 0
   playerOne: 0
+  uiText: {fileID: 0}
+  playerOneString: 
+  playerTwoString: 
 --- !u!212 &460973831
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -360,6 +363,7 @@ MonoBehaviour:
   menuOpening: 0
   BDogTrigger: 0
   GDogTrigger: 0
+  CheeseTrigger: 0
   CakeTrigger: 0
   MurderTrigger: 0
   IslandTrigger: 0

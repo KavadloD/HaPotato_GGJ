@@ -13,6 +13,7 @@ public class WordDetector : MonoBehaviour
    public bool menuOpening = false;
    public bool BDogTrigger = false;
    public bool GDogTrigger = false;
+   public bool CheeseTrigger = false;
    public bool CakeTrigger = false;
    public bool MurderTrigger = false;
    public bool IslandTrigger = false;
@@ -100,6 +101,10 @@ public class WordDetector : MonoBehaviour
 
       private void Cheese()
       {
+         //if (miniGameTrigger1 == true)
+         
+            CheeseTrigger = true;
+            Debug.Log("Cheese Triggered");
          
       }
 

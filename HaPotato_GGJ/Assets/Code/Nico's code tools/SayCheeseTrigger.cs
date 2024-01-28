@@ -47,9 +47,9 @@ public class SayCheeseTrigger : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (_wordDetector.GDogTrigger == true)
+        if (_wordDetector.CheeseTrigger == true)
         {
-            _wordDetector.GDogTrigger = false;
+            _wordDetector.CheeseTrigger = false;
             wordTriggered = true;
         }
         if (wordTriggered == true)
