@@ -40,7 +40,7 @@ public class LoudestBirdTrigger : MonoBehaviour
         targetTime = 5;
 
 
-
+/*
          // Check if the Text component is assigned
         if (uiText == null)
         {
@@ -50,7 +50,7 @@ public class LoudestBirdTrigger : MonoBehaviour
 
         // Update the Text component with the string
         UpdateUIText(myString);
-
+*/
     }
     
 
@@ -105,7 +105,7 @@ public class LoudestBirdTrigger : MonoBehaviour
             //After allotted time switches to win state for being quiet 
             if (targetTime <= 0.0f && amount == 2)
             {
-                amount++;
+                amount--;
             }
         }
         else if (amount > 2)
@@ -128,7 +128,7 @@ public class LoudestBirdTrigger : MonoBehaviour
         void UpdateUIText(string newText)
         {
              // Update the text property of the UI Text component
-            uiText.text = newText;
+            //uiText.text = newText;
         }
     
 }
