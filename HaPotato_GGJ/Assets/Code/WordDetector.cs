@@ -22,7 +22,7 @@ public class WordDetector : MonoBehaviour
    private void Start()
    {
       _actions.Add("return", Return);
-      _actions.Add("open", Open);
+      _actions.Add("start", Open);
       _actions.Add("cheese", Cheese);
       _actions.Add("stop",Stop);
       _actions.Add("go", Go);
@@ -66,7 +66,6 @@ public class WordDetector : MonoBehaviour
    {
       if (menuOpening == true)
       {
-         miniGameTrigger1 = true;
          Debug.Log("Good Dog Triggered");
       }
       
@@ -119,6 +118,7 @@ public class WordDetector : MonoBehaviour
       private void Open()
       {
          menuOpening = true;
+         miniGameTrigger1 = true;
       }
       private void Return()
       {
