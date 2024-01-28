@@ -67,7 +67,7 @@ public class IslandTrigger : MonoBehaviour
 
         if (wordTriggered)
         {
-            helpSprite.SetActive(true);
+            //helpSprite.SetActive(true);
         }
         
         if (wordTriggered == true && chopperOverlap)

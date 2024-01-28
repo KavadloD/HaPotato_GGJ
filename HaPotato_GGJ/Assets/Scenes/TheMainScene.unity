@@ -1156,12 +1156,6 @@ MonoBehaviour:
   point2: {x: 0, y: 22}
   _WordDetector: {fileID: 759352157}
   miniGames:
-  - {fileID: 9144922031783334741, guid: c286fe3953779374a8adcc471dd5c6b6, type: 3}
-  - {fileID: 3374580049903531546, guid: 012246ca01dc1194a91e9f1271edc9c3, type: 3}
-  - {fileID: 3374580049903531546, guid: c38d01002c20f8c4eaff2587ba804850, type: 3}
-  - {fileID: 9039624728148238091, guid: 430756cce9eb246afa087d6119cebb2b, type: 3}
-  - {fileID: 7109919819354042292, guid: 54b11e7ecd99dfd4fa602b0986bfc8ff, type: 3}
-  - {fileID: 6675888056402997192, guid: f7d04f9acec2fff46b3e75ad3c003d82, type: 3}
   - {fileID: 8181369173763137081, guid: d8242862e79abc344862a653c3fe0d27, type: 3}
   miniGameCounter: 0
   discripText: {fileID: 890233660}
