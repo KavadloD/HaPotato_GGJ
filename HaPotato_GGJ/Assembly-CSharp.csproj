@@ -110,6 +110,7 @@
      <Folder Include="Assets\Assets\Images\Final Sprites" />
      <Folder Include="Assets\Code\Justin&apos;s Code" />
      <Folder Include="Assets\Assets\Images\Final Sprites\Bears" />
+     <Folder Include="Assets\Assets\Images\Final Sprites\Big bird" />
      <Folder Include="Assets\Assets\Images\Final Sprites\Kaiju" />
      <Folder Include="Assets\Code\Nico&apos;s code tools" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
