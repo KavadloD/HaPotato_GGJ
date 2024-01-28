@@ -18,13 +18,14 @@ public class CurtainCall : MonoBehaviour
 
     private bool minigameSpawned;
     private GameObject currentMinigame;
-
+    public Text discripText;
+    
     public bool playerOne;
     
     public Text uiText;
     public string playerOneString;
     public string playerTwoString;
-    
+    public string miniGameDiscrip;
     private AudioSource _audioSource;
     //public AudioClip BetweenTheme;
 
@@ -128,11 +129,26 @@ public class CurtainCall : MonoBehaviour
         GameObject instantiatedMiniGame =
             Instantiate(miniGames[randomIndex], new Vector3(0, 0, 0),
                 Quaternion.identity); //Spawns in the scene as a game Object
+        FindGameIds();
     }
-    
+   
     void UpdateUIText(string newText)
     {
         // Update the text property of the UI Text component
         uiText.text = newText;
+    }
+    void UpdateUIDis(string newText2)
+    {
+        // Update the text property of the UI Text component
+        discripText.text = newText2;
+    }
+
+    void FindGameIds()
+    {
+        currentMinigame = GameObject.FindGameObjectWithTag("MinigameParent");
+        MiniGameWordStorage minigameID = currentMinigame.GetComponent<MiniGameWordStorage>();
+        miniGameDiscrip = minigameID.myString;
+        UpdateUIDis(minigameID.myString);
+       
     }
 }

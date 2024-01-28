@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6675888056402997193}
   - component: {fileID: 6675888056402997194}
+  - component: {fileID: -1990288867647247934}
   m_Layer: 0
   m_Name: IslandMinigame
   m_TagString: MinigameParent
@@ -129,6 +130,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-1990288867647247934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6675888056402997192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172831856e157394294509cd45f5c8eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myString: Get Help
 --- !u!1 &6675888056580454347
 GameObject:
   m_ObjectHideFlags: 0
