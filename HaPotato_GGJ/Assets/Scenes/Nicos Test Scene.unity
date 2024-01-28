@@ -1044,6 +1044,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1210367914}
   m_CullTransparentMesh: 1
+--- !u!1 &1631996856
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1631996858}
+  - component: {fileID: 1631996857}
+  m_Layer: 0
+  m_Name: Game
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1631996857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631996856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9cbcf089721499ba3276a04b9834fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 2
+  _wordDetector: {fileID: 0}
+  volumeThresh: 0
+  Crowd_Cheer: {fileID: 8300000, guid: d8e3ccba1419a8148b94b3c586e7241d, type: 3}
+  Crowd_Dissapoint: {fileID: 8300000, guid: 9105c9510f658e34e95cf93123c719e3, type: 3}
+  uiText: {fileID: 0}
+  myString: Hello, Unity!
+--- !u!4 &1631996858
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631996856}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 255.494, y: 167.22939, z: -4.6549206}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1694463790
 GameObject:
   m_ObjectHideFlags: 0
