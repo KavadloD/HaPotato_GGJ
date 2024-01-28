@@ -105,6 +105,7 @@
      <Compile Include="Assets\Code\Nico&apos;s code tools\GodzillaTrigger.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\Code\Nico&apos;s code tools\ChopperCrying.cs" />
+     <Compile Include="Assets\Code\Nico&apos;s code tools\CrossWalkTrigger.cs" />
      <Folder Include="Assets" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.0\Lib\Editor\PlasticSCM\localization\mergetool.ja.txt" />
      <None Include="Library\PackageCache\com.unity.collab-proxy@2.0.0\Lib\Editor\PlasticSCM\localization\images.zh-Hans.txt" />

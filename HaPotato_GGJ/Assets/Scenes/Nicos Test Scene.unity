@@ -518,6 +518,7 @@ MonoBehaviour:
   CheeseTrigger: 0
   CakeTrigger: 0
   MurderTrigger: 0
+  walkWayTrigger: 0
   IslandTrigger: 0
   LetMeInTrigger: 0
   miniGameTrigger1: 0
@@ -898,8 +899,7 @@ MonoBehaviour:
   point2: {x: 0, y: 22}
   _WordDetector: {fileID: 436849109}
   miniGames:
-  - {fileID: 6354080149680002266, guid: 287ca57490e91e64d9559a5e33843f6e, type: 3}
-  - {fileID: 377367131079824651, guid: 1d4b523edcaca084a9659ffdfd55af15, type: 3}
+  - {fileID: 2002383783090714008, guid: f277170cf0b0f914089f07c587871ddd, type: 3}
   miniGameCounter: 0
   minigameSpawned: 0
   discripText: {fileID: 1979868234}

@@ -16,6 +16,7 @@ public class WordDetector : MonoBehaviour
    public bool CheeseTrigger = false;
    public bool CakeTrigger = false;
    public bool MurderTrigger = false;
+   public bool walkWayTrigger = false;
    public bool IslandTrigger = false;
    public bool LetMeInTrigger = false;
    public bool miniGameTrigger1 = false;
@@ -54,6 +55,9 @@ public class WordDetector : MonoBehaviour
       _actions.Add("kill", Kill);
       _actions.Add("cake",CakeFunc);
       _actions.Add("murder",MurderFunc);
+      
+//      _actions.Add("stop",CrosswalkMinigame);
+      
       _keywordRecognizer = new KeywordRecognizer(_actions.Keys.ToArray());
       _keywordRecognizer.OnPhraseRecognized += RecoginzedWords;
       _keywordRecognizer.Start();
@@ -190,6 +194,7 @@ public class WordDetector : MonoBehaviour
      }
   }
 
+ 
   #endregion
 }
 
