@@ -11,8 +11,11 @@ public class IslandTrigger : MonoBehaviour
     private float targetTime;
     private bool played;
     
+    private float helpTimer;
+    
     private GameObject chopperSprite;
     private GameObject helpSprite;
+    private GameObject exclaimationSprite;
 
     private GameObject audioLayer;
         
@@ -21,6 +24,10 @@ public class IslandTrigger : MonoBehaviour
     public AudioClip Crowd_Dissapoint;
     
     private GameObject parentObject;
+
+    public bool chopperOverlap;
+
+    public Chopper chopperScr;
     
     void Awake()
     {
@@ -34,6 +41,8 @@ public class IslandTrigger : MonoBehaviour
         
         chopperSprite = this.transform.GetChild(0).gameObject; 
         helpSprite = this.transform.GetChild(1).gameObject;
+        exclaimationSprite = this.transform.GetChild(2).gameObject;
+        exclaimationSprite.SetActive(false);
         
         played = false; 
     }
@@ -41,18 +50,32 @@ public class IslandTrigger : MonoBehaviour
     private void Start()
     {
         AudioLoudnessDetecton[] audioLoudness = FindObjectsOfType<AudioLoudnessDetecton>();
+        
+        _audioSource = GetComponent<AudioSource>();
+        _wordDetector = audioLayer.GetComponent<WordDetector>();
     }
 
     void FixedUpdate()
     {
+        
         if (_wordDetector.IslandTrigger == true)
         {
             _wordDetector.IslandTrigger = false;
             wordTriggered = true;
+            print("test 1");
         }
-        if (wordTriggered == true)
+
+        if (wordTriggered)
+        {
+            helpSprite.SetActive(true);
+        }
+        
+        if (wordTriggered == true && chopperOverlap)
         {
             amount++;
+            chopperScr.chopperStop = true;
+            exclaimationSprite.SetActive(true);
+            print("test 2");
         }
         
         //Lose
@@ -72,8 +95,6 @@ public class IslandTrigger : MonoBehaviour
         else if (amount == 2)
         {
             //Debug.Log("Neutral Condition met");
-
-            wordTriggered=false;
             targetTime -= Time.deltaTime;
 
             //Basic Timer

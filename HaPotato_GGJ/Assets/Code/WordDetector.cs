@@ -106,6 +106,9 @@ public class WordDetector : MonoBehaviour
 
       private void Help()
       {
+         IslandTrigger = true;
+         Debug.Log("Island Triggered");
+         
          if (miniGameTrigger1 == true)
          {
             IslandTrigger = true;

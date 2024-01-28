@@ -35,7 +35,7 @@ public class CurtainCall : MonoBehaviour
     {
         targetTime -= Time.deltaTime;
         
-        print(targetTime);
+        //print(targetTime);
         
         if (isWordToggled)
         {

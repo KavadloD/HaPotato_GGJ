@@ -7,11 +7,15 @@ public class Chopper : MonoBehaviour
 {
     private bool chopperGoingLeft;
     private bool chopperGoingRight;
-
+    public bool chopperStop;
+    
     private SpriteRenderer _spr;
+
+    public IslandTrigger islandScript;
     // Start is called before the first frame update
     void Start()
     {
+        chopperStop = false;
         chopperGoingLeft = true;
         chopperGoingRight = false;
         
@@ -21,7 +25,7 @@ public class Chopper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (chopperGoingRight)
+        if (chopperGoingRight && !chopperStop)
         {
             transform.position = Vector2.Lerp(transform.position, new Vector2(17f,1.7f), Time.deltaTime);
             
@@ -34,7 +38,7 @@ public class Chopper : MonoBehaviour
             }
         }
 
-        if (chopperGoingLeft)
+        if (chopperGoingLeft && !chopperStop)
         {
             transform.position = Vector2.Lerp(transform.position, new Vector2(-17f,1.7f), Time.deltaTime);
 
@@ -48,8 +52,13 @@ public class Chopper : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D col)
     {
-        
+        islandScript.chopperOverlap = true;
+    }
+    
+    void OnTriggerExit2D(Collider2D col)
+    {
+        islandScript.chopperOverlap = false;
     }
 }
