@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4783775898664131660}
   - component: {fileID: 3564389109005654381}
-  - component: {fileID: 1403801318582704926}
   m_Layer: 0
   m_Name: LoudestBirdMinigame
   m_TagString: MinigameParent
@@ -131,19 +130,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1403801318582704926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1429575115347138095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ce001b1afcfa8d4aa6ee6c5895de597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myString: Get Loud
 --- !u!1 &2459291967272390711
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,6 +184,8 @@ MonoBehaviour:
   Crowd_Cheer: {fileID: 8300000, guid: d8e3ccba1419a8148b94b3c586e7241d, type: 3}
   Crowd_Dissapoint: {fileID: 8300000, guid: 9105c9510f658e34e95cf93123c719e3, type: 3}
   timer: 0
+  uiText: {fileID: 6837028119573041261}
+  myString: Hello, Unity!
 --- !u!82 &4491871624195232624
 AudioSource:
   m_ObjectHideFlags: 0
