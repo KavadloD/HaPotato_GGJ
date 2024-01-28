@@ -1,85 +1,81 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using UnityEditor.Tilemaps;
+using UnityEngine.UI;
 
 public class Bubble : MonoBehaviour
 {
-  public int amount = 1; // This could be any variable that changes over time
+  public int amount = 0; // This could be any variable that changes over time
+  public int amountNeeded = 10;
     public AudioLoudnessDetecton _wordDetector;
-    private bool wordTriggered=false;
-    public float volumeThresh=0.07f;
-    [SerializeField] BubbleStatus gameStatus;
-    [SerializeField] TMP_Text timerText;
-    [SerializeField] GameObject win, lose, bubble;
-    public int blowsNeeded;
-    public int blowCount;
-    private float startTime;
-    private bool shot;
-    private bool shotHasBeenChecked;
-    private bool teacherTurned;
-    private float StartTime;
+    private bool wordTriggered;
+    public float volumeThresh;
+    private bool played;
+    private float targetTime;
+    
+    [SerializeField] GameObject bubble;
+    [SerializeField] SpriteRenderer blower;
+    [SerializeField] Sprite loseSprite;
+    private GameObject audioLayer;
+    private AudioSource _audioSource;
+    public AudioClip Crowd_Cheer;
+    public AudioClip Crowd_Dissapoint;
+    public float startTime;
+    public float endTime = 5;
 
+    public Text uiText;
+    public string myString = "Hello, Unity!";
+    private wincon wincnd;
+    
+
+    void Awake()
+    {
+        audioLayer = GameObject.FindGameObjectWithTag("GameController");
+        _wordDetector = audioLayer.GetComponent<AudioLoudnessDetecton>();
+        
+        _audioSource = GetComponent<AudioSource>();
+        
+        targetTime = 5;
+        
+    }
 
     void Start(){
-        blowCount = 0;
-        shot = false;
-        shotHasBeenChecked = false;
         startTime = Time.time;
+        wincnd = wincon.ingame;
     }
     
-    void Update(){
-        if(gameStatus == BubbleStatus.Ingame){
-    
-            // Check for timer loss and update time
-            if(Time.time > StartTime + 5){
-                gameStatus = BubbleStatus.Lost;
-            }
-            timerText.text = string.Format("{0:N3}", Time.time - StartTime);
-        }
-    
-        // Enable win/loss test sprites
-        if(gameStatus == BubbleStatus.Won){
-            win.SetActive(true);
-        }
-        if(gameStatus == BubbleStatus.Lost){
-            lose.SetActive(true);
-        }
-    }
 
     void FixedUpdate()
     {
-        if (_wordDetector.volume >= volumeThresh)
-        {
-            _wordDetector.CakeTriggerer = false;
-            wordTriggered = true;
-        }
-        if (wordTriggered == true)
-        {
-            blowCount++;
-        }
-        
-        if(gameStatus == BubbleStatus.Ingame){
-
-            if (blowCount < blowsNeeded)
-            {
-                Debug.Log("blow");
-                blowCount++;
-                bubble.transform.localScale =  new Vector3(bubble.transform.localScale.x + 0.5f,bubble.transform.localScale.y + 0.5f,bubble.transform.localScale.z + 0.5f);
-                wordTriggered=false;
+        if(wincnd == wincon.ingame)
+            if(Time.time - startTime < endTime){
+                print(_wordDetector.volume);
+                if (_wordDetector.volume >= volumeThresh)
+                {
+                    _wordDetector.MurderTrigger = false;
+                    wordTriggered = true;   
+                }
+                if (wordTriggered == true)
+                {
+                    amount++;
+                    bubble.transform.localScale = new Vector3(bubble.transform.localScale.x+0.3f,bubble.transform.localScale.y+0.3f,bubble.transform.localScale.z+0.3f);
+                    wordTriggered = false;
+                }
+                if(amount >= amountNeeded){
+                    wincnd = wincon.win;
+                    Debug.Log("Win!");
+                }
+            }
+            else{
+                wincnd = wincon.lose;
+                blower.sprite = loseSprite;
+                bubble.gameObject.SetActive(false);
+                Debug.Log("Lose!");
             }
 
-            else if (blowCount >= blowsNeeded)
-            {
-                gameStatus = BubbleStatus.Won;
-            }
 
-        }
-        
-        
     }
+    
+    private enum wincon{ingame,win,lose}
 
-    // The enum for gameStatus
-    public enum BubbleStatus{Ingame, Lost, Won}
 }
