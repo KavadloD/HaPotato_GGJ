@@ -265,6 +265,7 @@ MonoBehaviour:
   sampleWindow: 64
   AudioThresh: 0
   CakeTriggerer: 0
+  MurderTrigger: 0
   volume: 0
 --- !u!114 &510671071
 MonoBehaviour:
@@ -282,7 +283,10 @@ MonoBehaviour:
   BDogTrigger: 0
   GDogTrigger: 0
   CakeTrigger: 0
-  miniGameTrigger: 0
+  MurderTrigger: 0
+  IslandTrigger: 0
+  miniGameTrigger1: 0
+  miniGameTrigger2: 0
 --- !u!4 &510671072
 Transform:
   m_ObjectHideFlags: 0
@@ -836,6 +840,7 @@ MonoBehaviour:
   miniGames:
   - {fileID: 7109919819354042292, guid: 54b11e7ecd99dfd4fa602b0986bfc8ff, type: 3}
   miniGameCounter: 0
+  playerOne: 0
 --- !u!1 &1034076555
 GameObject:
   m_ObjectHideFlags: 0

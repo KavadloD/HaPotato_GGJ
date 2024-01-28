@@ -36,6 +36,7 @@ public class Cake : MonoBehaviour
 
     void FixedUpdate()
     {
+        print(_wordDetector.volume);
         //Checks threshold and switches to lose state if detects greater noise
         if (_wordDetector.volume >= volumeThresh)
         {
@@ -44,7 +45,7 @@ public class Cake : MonoBehaviour
         }
         if (wordTriggered == true)
         {
-            amount--;
+            amount++;
         }
 
         if (amount < 2)
@@ -73,7 +74,7 @@ public class Cake : MonoBehaviour
             //After allotted time switches to win state for being quiet 
             if (targetTime <= 0.0f && amount == 2)
             {
-                amount++;
+                amount--;
             }
         }
         else if (amount > 2)

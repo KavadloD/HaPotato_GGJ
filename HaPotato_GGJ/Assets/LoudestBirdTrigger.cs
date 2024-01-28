@@ -19,7 +19,7 @@ public class LoudestBirdTrigger : MonoBehaviour
     private AudioSource _audioSource;
     public AudioClip Crowd_Cheer;
     public AudioClip Crowd_Dissapoint;
-    private float timer=5f;
+    public float timer;
 
     void Awake()
     {
@@ -55,7 +55,7 @@ public class LoudestBirdTrigger : MonoBehaviour
         }
         if (wordTriggered == true)
         {
-            amount--;
+            amount++;
         }
 
 
