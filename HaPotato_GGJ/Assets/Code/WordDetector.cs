@@ -22,6 +22,9 @@ public class WordDetector : MonoBehaviour
    public bool miniGameTrigger1 = false;
    public bool yellowTrigger = false;
    public bool blueTrigger = false;
+
+   public GameObject credits;
+   public GameObject mainMenu;
    //public bool miniGameTrigger2 = false;
    
    private void Start()
@@ -51,8 +54,13 @@ public class WordDetector : MonoBehaviour
       _actions.Add("one",GameStart1);
       
       _actions.Add("let me in",LetMeIn);
+      _actions.Add("credits",Credits);
+      _actions.Add("close",Close);
       
       _actions.Add("kill", Kill);
+      _actions.Add("Reset", Kill);
+      _actions.Add("Restart", Kill);
+      
       _actions.Add("cake",CakeFunc);
       _actions.Add("murder",MurderFunc);
       
@@ -61,6 +69,8 @@ public class WordDetector : MonoBehaviour
       _keywordRecognizer = new KeywordRecognizer(_actions.Keys.ToArray());
       _keywordRecognizer.OnPhraseRecognized += RecoginzedWords;
       _keywordRecognizer.Start();
+      
+      credits.SetActive(false);
    }
 
    private void RecoginzedWords(PhraseRecognizedEventArgs speech)
@@ -84,6 +94,23 @@ public class WordDetector : MonoBehaviour
 
    #region CommandWords
 
+   private void Credits()
+   {
+      if (!miniGameTrigger1 && !credits.activeSelf)
+      {
+         credits.SetActive(true);
+         mainMenu.SetActive(false);
+      }
+   }
+   private void Close()
+   {
+      if (!miniGameTrigger1 && credits.activeSelf)
+      {
+         credits.SetActive(false);
+         mainMenu.SetActive(true);
+      }
+   }
+   
    private void LetMeIn()
    {
       LetMeInTrigger = true;
@@ -196,5 +223,7 @@ public class WordDetector : MonoBehaviour
 
  
   #endregion
+  
+  
 }
 

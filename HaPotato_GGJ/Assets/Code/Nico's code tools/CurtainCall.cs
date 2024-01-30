@@ -161,8 +161,7 @@ public class CurtainCall : MonoBehaviour
                     UpdateUIText(playerOneString);
                     playerTrigger = true;
                 }
-                
-              
+
             }
 
             if (targetTime <= -4)
@@ -189,7 +188,7 @@ public class CurtainCall : MonoBehaviour
         if (lastRolledNum == randomIndex)
         {
             GameObject instantiatedMiniGame =
-                Instantiate(miniGames[randomIndex+randomAddon], new Vector3(0, 0, 0),
+                Instantiate(miniGames[randomIndex+randomAddon-1], new Vector3(0, 0, 0),
                     Quaternion.identity); //Spawns in the scene as a game Object     
         }
         else

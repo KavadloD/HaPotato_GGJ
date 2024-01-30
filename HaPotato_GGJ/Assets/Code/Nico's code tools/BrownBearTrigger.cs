@@ -44,7 +44,7 @@ public class BrownBearTrigger : MonoBehaviour
 
         if (amount < 2)
         {
-            Debug.Log("Lose Condition met");
+            //Debug.Log("Lose Condition met");
 
             neutralSprite.SetActive(false);
             loseSprite.SetActive(true);
@@ -60,7 +60,7 @@ public class BrownBearTrigger : MonoBehaviour
         else if (amount == 2)
         {
             neutralSprite.SetActive(true);
-            Debug.Log("Neutral Condition met");
+            //Debug.Log("Neutral Condition met");
             wordTriggered = false;
 
             targetTime -= Time.deltaTime;
@@ -75,7 +75,7 @@ public class BrownBearTrigger : MonoBehaviour
         {
             neutralSprite.SetActive(false);
             winSprite.SetActive(true);
-            Debug.Log("Win Condition met");
+            //Debug.Log("Win Condition met");
             wordTriggered = false;
             
             if (!played)
